@@ -129,45 +129,9 @@
                 Aarya Plastopet
             </div>
             <div class="hidden md:flex space-x-6 items-center">
-                <!-- Products Dropdown (Desktop) -->
-                <div class="relative group">
-                    <button
-                        class="flex items-center text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition font-medium focus:outline-none"
-                        aria-expanded="false">
-                        <span data-lang-key="navProducts">Products</span>
-                        <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <!-- Main Dropdown -->
-                    <div
-                        class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left -translate-y-2 group-hover:translate-y-0 z-50 ring-1 ring-black ring-opacity-5">
-
-                        <!-- Domestic Grade Group -->
-                        <div class="px-4 py-2 border-b border-gray-100 dark:border-gray-700">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Domestic Grade</span>
-                        </div>
-                        <a href="india/stretch-film.html"
-                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 transition">Stretch
-                            Film (India)</a>
-                        <a href="india/silage-film.html"
-                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 transition">Silage
-                            Film (India)</a>
-
-                        <!-- Export Grade Group -->
-                        <div class="px-4 py-2 border-b border-gray-100 dark:border-gray-700 mt-2">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Export Grade</span>
-                        </div>
-                        <a href="export/stretch-film.html"
-                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 transition">Stretch
-                            Film (Export)</a>
-                        <a href="export/silage-film.html"
-                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-orange-50 dark:hover:bg-gray-700 hover:text-orange-600 transition">Silage
-                            Film (Export)</a>
-                    </div>
-                </div>
+                <a href="#products"
+                    class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition font-medium"
+                    data-lang-key="navProducts">Products</a>
                 <a href="#quality"
                     class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition font-medium"
                     data-lang-key="navQuality">Quality</a>
@@ -379,7 +343,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                     <!-- Product Card 1: Machine Grade -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80">
+                    <a href="stretch-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80">
                         <div>
                             <img src="Product Image/STRETCH_FILM_8.jpg" alt="Machine Grade Stretch Film"
                                 class="w-full h-full object-cover">
@@ -403,10 +368,11 @@
                                 <li data-lang-key="productMachineL4">Available in Various Gauges and Widths</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Product Card 2: Hand Grade -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
+                    <a href="stretch-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
                         style="transition-delay: 100ms;">
                         <div class="absolute inset-0">
                             <img src="Product Image/STRETCH_FILM_7.jpg" alt="Hand Grade Stretch Film"
@@ -431,10 +397,11 @@
                                 <li data-lang-key="productHandL4">Cost-Effective for Manual Packaging Needs</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Product Card 3: Colored Film -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
+                    <a href="silage-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
                         style="transition-delay: 100ms;">
                         <div class="absolute inset-0">
                             <img src="Product Image/STRETCH_FILM_5.jpg" alt="Silage Stretch Film"
@@ -460,10 +427,11 @@
                                 <li data-lang-key="productSilage_FilmL4">Reduces Risk of Pilferage</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Product Card 4: UV Resistant -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
+                    <a href="stretch-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
                         style="transition-delay: 300ms;">
                         <div style="background-image: url('https://placehold.co/500x300/f59e0b/ffffff?text=UV+Film')"
                             class="product-card-bg absolute inset-0 transition-transform duration-500 group-hover:scale-110">
@@ -486,10 +454,11 @@
                                 <li data-lang-key="productUvL4">Maintains Film Integrity Outdoors</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Product Card 5: Pre-Stretched -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
+                    <a href="stretch-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
                         style="transition-delay: 400ms;">
                         <div style="background-image: url('https://placehold.co/500x300/8b5cf6/ffffff?text=Pre-Stretched')"
                             class="product-card-bg absolute inset-0 transition-transform duration-500 group-hover:scale-110">
@@ -513,10 +482,11 @@
                                 <li data-lang-key="productPrestretchL4">Excellent Load Containment</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Product Card 6: Vented Wrap -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
+                    <a href="stretch-film.html"
+                        class="block group relative rounded-lg shadow-lg overflow-hidden card-hover animate-on-scroll h-80"
                         style="transition-delay: 500ms;">
                         <div style="background-image: url('https://placehold.co/500x300/ec4899/ffffff?text=Vented+Wrap')"
                             class="product-card-bg absolute inset-0 transition-transform duration-500 group-hover:scale-110">
@@ -539,7 +509,7 @@
                                 <li data-lang-key="productVentedL4">Perfect for Food & Beverage Industry</li>
                             </ul>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>

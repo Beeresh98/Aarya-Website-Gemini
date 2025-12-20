@@ -1,0 +1,158 @@
+/* =========================================
+   ANIMATION & MOTION SYSTEM (STRICT)
+   Apply ONLY to NEW pages.
+   NO animations on Header, Footer, or Homepage.
+   ========================================= */
+
+/* Use reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* -----------------------------------------
+   UTILITIES
+   ----------------------------------------- */
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+
+/* -----------------------------------------
+   HERO ANIMATIONS
+   Text fades in ONCE on load.
+   ----------------------------------------- */
+@keyframes heroTextFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-text {
+    animation: heroTextFadeIn 1.2s ease-out forwards;
+    opacity: 0; /* Star hidden */
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* -----------------------------------------
+   SCROLL REVEAL ANIMATION
+   Subtle fade-in + slide-up.
+   Triggered via JS observer.
+   ----------------------------------------- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -----------------------------------------
+   CARD INTERACTION
+   Subtle lift + soft shadow.
+   ----------------------------------------- */
+.card-hover-effect {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* -----------------------------------------
+   CTA GLOW
+   No pulsing, no bouncing.
+   ----------------------------------------- */
+.cta-glow {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.cta-glow:hover {
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.5); /* Orange glow */
+    /* No scale transform to keep it subtle */
+}
+
+/* -----------------------------------------
+   HERO BACKGROUND SLIDESHOW
+   Full width, cross-fade.
+   ----------------------------------------- */
+.hero-slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Slow cross-fade */
+    z-index: 0;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Overlay to ensure text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 20, 35, 0.7), rgba(10, 20, 35, 0.5));
+    z-index: 2;
+}
+
+/* -----------------------------------------
+   REINLAND BRANDING OVERRIDES
+   Only for Silage Pages.
+   ----------------------------------------- */
+.reinland-theme .text-primary {
+    color: #01313b; /* Deep Green/Blue */
+}
+
+.reinland-theme .bg-primary {
+    background-color: #01313b;
+}
+
+.reinland-theme .hover-text-primary:hover {
+    color: #01313b;
+}
+
+.reinland-theme .btn-primary {
+    background-color: #01313b;
+    color: white;
+}
+
+.reinland-theme .btn-primary:hover {
+    background-color: #01242c;
+    box-shadow: 0 0 15px rgba(1, 49, 59, 0.4);
+}
+
+.reinland-theme .border-primary {
+    border-color: #01313b;
+}
+
+.reinland-theme .text-secondary {
+    color: #989991; /* Greyish Green */
+}
