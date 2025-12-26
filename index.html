@@ -756,7 +756,7 @@
                 <div class="flex flex-col md:flex-row gap-12">
                     <!-- Form -->
                     <div class="md:w-2/3 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-2xl animate-on-scroll">
-                        <form id="contact-form">
+                        <form id="contactForm">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <input type="text" name="name" data-lang-placeholder="formName" required
                                     class="w-full p-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-orange-500 focus:border-orange-500">
@@ -785,7 +785,7 @@
                             <button type="submit"
                                 class="mt-6 w-full bg-orange-500 text-white p-4 rounded-full font-bold text-lg cta-button"
                                 data-lang-key="formSubmit">Submit Inquiry</button>
-                            <p id="form-status" class="mt-4 text-center"></p>
+                            <div id="formStatus" class="mt-4 text-center"></div>
                         </form>
                     </div>
                     <!-- Contact Details -->
@@ -1088,41 +1088,7 @@
                 resultDiv.classList.remove('hidden');
             });
 
-            // Contact Form Submission
-            const contactForm = document.getElementById('contact-form');
-            const formStatus = document.getElementById('form-status');
 
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                formStatus.textContent = 'Sending...';
-                formStatus.classList.remove('text-red-500', 'text-green-500');
-
-                // NOTE: Replace 'YOUR_FORM_ID' with your actual form ID from Formspree.
-                const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
-
-                const formData = new FormData(contactForm);
-
-                try {
-                    const response = await fetch(formspreeEndpoint, {
-                        method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
-                    });
-
-                    if (response.ok) {
-                        formStatus.textContent = 'Thank you! Your inquiry has been sent successfully.';
-                        formStatus.classList.add('text-green-500');
-                        contactForm.reset();
-                    } else {
-                        const data = await response.json();
-                        formStatus.textContent = data.errors ? data.errors.map(error => error.message).join(', ') : 'Oops! There was a problem.';
-                        formStatus.classList.add('text-red-500');
-                    }
-                } catch (error) {
-                    formStatus.textContent = 'Oops! There was a network error.';
-                    formStatus.classList.add('text-red-500');
-                }
-            });
 
             // Scroll Animation Logic
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -1200,6 +1166,56 @@
         });
     </script>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // INITIALIZATION
+            emailjs.init("QhHVus0o94yoXiR6X");
+        })();
+    </script>
+    <script>
+        // Form Submission Logic (Strict)
+        const contactForm = document.getElementById('contactForm');
+        const statusMsg = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Disable Button
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
+            statusMsg.innerText = "";
+
+            // Prepare Params (EXACT MAPPING)
+            const params = {
+                company_name: contactForm.company.value,
+                email: contactForm.email.value,
+                phone: contactForm.phone.value,
+                quantity: contactForm.volume.value,
+                location: contactForm.region.value,
+                message: contactForm.message.value,
+                source_page: document.referrer || "Direct"
+            };
+
+            // Send Email
+            emailjs.send("service_sg1gkj4", "REPLACE_WITH_TEMPLATE_ID", params)
+                .then(function () {
+                    // SUCCESS
+                    statusMsg.innerText = "Thank you, we’ll contact you soon.";
+                    statusMsg.className = "mt-4 text-center text-green-600 font-bold";
+                    contactForm.reset();
+                }, function (error) {
+                    // ERROR
+                    console.error('EmailJS Error:', error);
+                    statusMsg.innerText = "Something went wrong. Please try again.";
+                    statusMsg.className = "mt-4 text-center text-red-600 font-bold";
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Submit Inquiry";
+                });
+        });
+    </script>
 </body>
 
 </html>
