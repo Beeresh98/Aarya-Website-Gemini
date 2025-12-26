@@ -41,6 +41,57 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Tech Specs Modal Styles */
+        #tech-specs-modal {
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        #tech-specs-modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        #tech-specs-modal:not(.hidden) {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        #tech-specs-modal .modal-content {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: scale(0.97);
+            opacity: 0;
+        }
+
+        #tech-specs-modal:not(.hidden) .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar for Modal */
+        .modal-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .dark .modal-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark .modal-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -207,6 +258,12 @@
                                 class="text-sm text-gray-500 hover:text-orange-500 underline">Looking for Silage
                                 Film?</a>
                         </div>
+
+                        <!-- Technical Specs Trigger -->
+                        <button id="open-specs-btn"
+                            class="w-full mt-4 py-3 px-6 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-lg text-center font-bold hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                            View Technical Specs
+                        </button>
                     </div>
 
                 </div>
@@ -242,6 +299,340 @@
         }, observerOptions);
         document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
     </script>
+
+    <!-- Technical Specification Modal -->
+    <div id="tech-specs-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/80 hidden p-4 sm:p-6" role="dialog"
+        aria-modal="true">
+        <!-- Modal Content -->
+        <div
+            class="modal-content bg-white dark:bg-gray-800 w-full max-w-[900px] max-h-[90vh] rounded-xl shadow-2xl flex flex-col overflow-hidden ring-1 ring-white/10">
+
+            <!-- Modal Header (Sticky) -->
+            <div
+                class="flex items-center justify-between p-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 z-10 shrink-0">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Stretch Film – Technical Specifications</h3>
+                <button id="close-specs-btn"
+                    class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Toolbar (Sticky): Unit Toggle + Tabs -->
+            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 border-b border-gray-200 dark:border-gray-700 shrink-0">
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
+
+                    <!-- Tabs -->
+                    <div class="flex bg-gray-200 dark:bg-gray-700 rounded-lg p-1 w-full sm:w-auto">
+                        <button
+                            class="spec-tab active flex-1 sm:flex-none px-6 py-2 rounded-md text-sm font-semibold transition-all duration-200 bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm"
+                            data-tab="manual">
+                            Manual Grade
+                        </button>
+                        <button
+                            class="spec-tab flex-1 sm:flex-none px-6 py-2 rounded-md text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-200"
+                            data-tab="machine">
+                            Machine Grade
+                        </button>
+                    </div>
+
+                    <!-- Unit Toggle -->
+                    <div
+                        class="flex items-center space-x-3 bg-white dark:bg-gray-800 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <span class="text-sm font-medium text-gray-900 dark:text-white"
+                            id="unit-label-metric">Metric</span>
+
+                        <button id="unit-toggle-btn"
+                            class="relative w-12 h-6 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 focus:outline-none"
+                            aria-pressed="false">
+                            <span
+                                class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-200 translate-x-0"></span>
+                        </button>
+
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                            id="unit-label-imperial">Imperial</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Scrollable Content Area -->
+            <div class="overflow-y-auto modal-scroll p-0 flex-1 bg-white dark:bg-gray-800 relative">
+
+                <!-- Table Container -->
+                <div class="w-full">
+
+                    <!-- MANAUL GRADE TABLE -->
+                    <div id="tab-content-manual" class="block">
+                        <table class="w-full text-left border-collapse">
+                            <thead
+                                class="bg-gray-100 dark:bg-gray-900/50 text-gray-600 dark:text-gray-400 text-xs uppercase sticky top-0 z-10 font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Size</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Length</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Thickness</th>
+                                    <th
+                                        class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 whitespace-nowrap">
+                                        Rolls / Case</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm divide-y divide-gray-100 dark:divide-gray-700">
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="300" data-type="size">300 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="200-400"
+                                        data-type="length">200–400 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">6 Rolls</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">Green, Light Green, White,
+                                        Black</td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="350" data-type="size">350 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="200-400"
+                                        data-type="length">200–400 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">6 Rolls</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">Green, Light Green, White,
+                                        Black</td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="450" data-type="size">450 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="200-1500"
+                                        data-type="length">200–1500 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">2 Rolls</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">White, Transparent</td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="500" data-type="size">500 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="400-3600"
+                                        data-type="length">400–3600 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">1 Roll</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">White, Transparent</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- MACHINE GRADE TABLE -->
+                    <div id="tab-content-machine" class="hidden">
+                        <table class="w-full text-left border-collapse">
+                            <thead
+                                class="bg-gray-100 dark:bg-gray-900/50 text-gray-600 dark:text-gray-400 text-xs uppercase sticky top-0 z-10 font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Size</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Length</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Thickness</th>
+                                    <th
+                                        class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 whitespace-nowrap">
+                                        Rolls / Case</th>
+                                    <th class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm divide-y divide-gray-100 dark:divide-gray-700">
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="500" data-type="size">500 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="1000-3600"
+                                        data-type="length">1000–3600 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">1 Roll</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">Green, Light Green, White,
+                                        Black</td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                                        data-val-metric="600" data-type="size">600 mm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="1000-3600"
+                                        data-type="length">1000–3600 m</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300" data-val-metric="12-35"
+                                        data-type="thickness">12–35 µm</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">1 Roll</td>
+                                    <td class="px-6 py-4 text-gray-600 dark:text-gray-300">Green, Light Green, White,
+                                        Black</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- Footer Note -->
+                <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/30">
+                    <p class="text-xs text-gray-500 italic text-center">
+                        * Imperial values are indicative and rounded for reference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('tech-specs-modal');
+            const openBtn = document.getElementById('open-specs-btn');
+            const closeBtn = document.getElementById('close-specs-btn');
+            const modalContent = modal.querySelector('.modal-content');
+
+            // Toggle Logic
+            const unitToggleBtn = document.getElementById('unit-toggle-btn');
+            const unitKnob = unitToggleBtn.querySelector('span');
+            const labelMetric = document.getElementById('unit-label-metric');
+            const labelImperial = document.getElementById('unit-label-imperial');
+            let isMetric = true;
+
+            // Tabs Logic
+            const tabs = document.querySelectorAll('.spec-tab');
+            const tabContents = {
+                'manual': document.getElementById('tab-content-manual'),
+                'machine': document.getElementById('tab-content-machine')
+            };
+
+            // Open Modal
+            openBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Lock body scroll
+            });
+
+            // Close Modal Function
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Unlock body scroll
+            };
+
+            closeBtn.addEventListener('click', closeModal);
+
+            // Click Outside to Close
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // ESC Key to Close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+            });
+
+            // Tabs Switching
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Update Tab UI
+                    tabs.forEach(t => {
+                        t.classList.remove('bg-white', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white', 'shadow-sm');
+                        t.classList.add('text-gray-600', 'dark:text-gray-400');
+                    });
+                    tab.classList.remove('text-gray-600', 'dark:text-gray-400');
+                    tab.classList.add('bg-white', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white', 'shadow-sm');
+
+                    // Show Content
+                    const target = tab.dataset.tab;
+                    Object.values(tabContents).forEach(content => content.classList.add('hidden'));
+                    tabContents[target].classList.remove('hidden');
+                });
+            });
+
+            // Unit Conversion Logic
+            unitToggleBtn.addEventListener('click', () => {
+                isMetric = !isMetric;
+
+                // Toggle UI
+                if (!isMetric) {
+                    unitKnob.classList.add('translate-x-6');
+                    unitToggleBtn.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+                    unitToggleBtn.classList.add('bg-orange-500');
+                    labelImperial.classList.replace('text-gray-500', 'text-gray-900');
+                    labelImperial.classList.replace('dark:text-gray-400', 'dark:text-white');
+                    labelMetric.classList.replace('text-gray-900', 'text-gray-500');
+                    labelMetric.classList.replace('dark:text-white', 'dark:text-gray-400');
+                } else {
+                    unitKnob.classList.remove('translate-x-6');
+                    unitToggleBtn.classList.add('bg-gray-300', 'dark:bg-gray-600');
+                    unitToggleBtn.classList.remove('bg-orange-500');
+                    labelMetric.classList.replace('text-gray-500', 'text-gray-900');
+                    labelMetric.classList.replace('dark:text-gray-400', 'dark:text-white');
+                    labelImperial.classList.replace('text-gray-900', 'text-gray-500');
+                    labelImperial.classList.replace('dark:text-white', 'dark:text-gray-400');
+                }
+
+                // Update Values
+                updateValues();
+            });
+
+            const updateValues = () => {
+                const dataCells = document.querySelectorAll('[data-val-metric]');
+
+                dataCells.forEach(cell => {
+                    // Fade animation
+                    cell.style.opacity = '0.5';
+
+                    setTimeout(() => {
+                        const metricVal = cell.dataset.valMetric;
+                        const type = cell.dataset.type;
+
+                        if (isMetric) {
+                            // Restore Metric
+                            if (type === 'size') cell.innerText = `${metricVal} mm`;
+                            if (type === 'length') cell.innerText = `${metricVal} m`;
+                            if (type === 'thickness') cell.innerText = `${metricVal} µm`;
+                        } else {
+                            // Fixed Imperial Values
+                            if (type === 'size') {
+                                const map = {
+                                    '300': '12',
+                                    '350': '14',
+                                    '450': '18',
+                                    '500': '20',
+                                    '600': '24'
+                                };
+                                cell.innerText = (map[metricVal] || metricVal) + ' inch';
+                            }
+                            if (type === 'length') {
+                                const map = {
+                                    '200-400': '650–1300',
+                                    '200-1500': '650–4900',
+                                    '400-3600': '1300–11800',
+                                    '1000-3600': '3300–11800'
+                                };
+                                cell.innerText = (map[metricVal] || metricVal) + ' ft';
+                            }
+                            if (type === 'thickness') {
+                                // Fixed range for 12-35
+                                if (metricVal === '12-35') {
+                                    cell.innerText = '40–140 Gauge';
+                                } else {
+                                    cell.innerText = metricVal + ' Gauge';
+                                }
+                            }
+                        }
+
+                        cell.style.opacity = '1';
+                    }, 150);
+                });
+            };
+        });
+    </script>
+
 </body>
 
 </html>

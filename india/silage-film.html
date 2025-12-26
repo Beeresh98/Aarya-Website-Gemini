@@ -41,6 +41,59 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Tech Specs Modal Styles */
+        #tech-specs-modal {
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #tech-specs-modal.open {
+            display: block;
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #tech-specs-modal .modal-content-wrapper {
+            transition: transform 0.3s ease-out;
+            transform: scale(0.95);
+        }
+
+        #tech-specs-modal.open .modal-content-wrapper {
+            transform: scale(1);
+        }
+
+        .spec-tab.active {
+            background-color: #f97316;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scrollbar for modal content */
+        .modal-content-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content-wrapper::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .modal-content-wrapper::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+
+        .tractor-watermark {
+            position: absolute;
+            bottom: -20px;
+            right: -40px;
+            opacity: 0.04;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
     </style>
 </head>
 
@@ -193,6 +246,12 @@
                             Enquire Now
                         </a>
 
+                        <!-- Technical Specs Trigger -->
+                        <button id="open-specs-btn"
+                            class="w-full mt-3 py-3 rounded-lg border-2 border-primary text-primary dark:text-white hover:bg-primary hover:text-white font-semibold transition-colors">
+                            View Technical Specs
+                        </button>
+
                         <div class="text-center mt-4">
                             <span class="text-xs text-gray-500">GST Invoice Available</span>
                         </div>
@@ -230,6 +289,340 @@
             });
         }, observerOptions);
         document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+    <!-- TECH SPECS MODAL & LOGIC -->
+    <div id="tech-specs-modal" class="fixed inset-0 z-50 hidden" aria-modal="true" role="dialog">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+
+        <!-- Modal Content Container -->
+        <div
+            class="relative w-full h-full md:h-auto md:max-w-[1100px] mx-auto md:my-10 bg-gray-900 text-white rounded-none md:rounded-[14px] shadow-2xl flex flex-col overflow-hidden modal-content-wrapper border border-gray-700">
+
+            <!-- TRACTOR WATERMARK (Background) -->
+            <img src="../assets/images/silage-film/Tractor.png" alt=""
+                class="tractor-watermark w-3/4 max-w-[600px] md:w-1/2">
+
+            <!-- HEADER -->
+            <div
+                class="relative z-10 flex items-center justify-between px-6 py-5 border-b border-gray-700 bg-gray-900/95 backdrop-blur">
+                <div class="flex items-center gap-4">
+                    <!-- LOGO -->
+                    <img src="../logo/REINLAND LOGO.png" alt="Reinland"
+                        class="h-8 md:h-10 w-auto bg-white/10 rounded px-1">
+                    <h2 class="text-lg md:text-xl font-bold text-gray-100 hidden sm:block">Silage Wrap Film – Technical
+                        Specifications</h2>
+                    <h2 class="text-lg font-bold text-gray-100 sm:hidden">Technical Specs</h2>
+                </div>
+                <button id="close-specs-btn" class="text-gray-400 hover:text-white p-2 transition-colors">
+                    <!-- X Icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- TOOLBAR (Tabs + Unit Toggle) -->
+            <div
+                class="relative z-10 px-6 py-4 bg-gray-800/50 border-b border-gray-700 flex flex-col sm:flex-row gap-4 justify-between items-center backdrop-blur-md">
+                <!-- TABS -->
+                <div class="flex space-x-1 bg-gray-900/80 p-1 rounded-lg border border-gray-700">
+                    <button class="spec-tab active px-4 py-2 rounded-md text-xs md:text-sm font-semibold transition-all"
+                        data-tab="reinland-60">
+                        REINLAND-60
+                    </button>
+                    <button
+                        class="spec-tab px-4 py-2 rounded-md text-xs md:text-sm font-semibold transition-all text-gray-400 hover:text-white"
+                        data-tab="reinland-400">
+                        REINLAND-400
+                    </button>
+                </div>
+
+                <!-- UNIT TOGGLE -->
+                <div class="flex items-center gap-3">
+                    <span class="text-xs md:text-sm font-medium text-white transition-colors"
+                        id="label-metric">Metric</span>
+                    <button id="unit-toggle-btn"
+                        class="relative w-12 h-6 bg-gray-600 rounded-full transition-colors focus:outline-none ring-offset-2 ring-offset-gray-800 focus:ring-2 focus:ring-orange-500">
+                        <span id="unit-knob"
+                            class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 shadow-sm"></span>
+                    </button>
+                    <span class="text-xs md:text-sm font-medium text-gray-400 transition-colors"
+                        id="label-imperial">Imperial</span>
+                </div>
+            </div>
+
+            <!-- CONTENT AREA (Scrollable) -->
+            <div class="relative z-10 overflow-y-auto p-6 md:p-8 space-y-8 flex-1 bg-gray-900/50">
+
+                <!-- TAB: REINLAND-60 -->
+                <div id="tab-reinland-60" class="tab-content transition-opacity duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-white mb-1 flex items-center gap-2">
+                            REINLAND-60
+                            <span
+                                class="text-xs font-normal px-2 py-0.5 rounded bg-green-900 text-green-300 border border-green-700">Economical</span>
+                        </h3>
+                        <p class="text-gray-400 text-sm">Cost-effective silage wrap for regular dairy and fodder use.
+                        </p>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-lg border border-gray-700">
+                        <table class="w-full text-left text-sm text-gray-300">
+                            <thead class="bg-gray-800 text-xs uppercase text-gray-400">
+                                <tr>
+                                    <th class="px-4 py-3">Size (Width)</th>
+                                    <th class="px-4 py-3">Length</th>
+                                    <th class="px-4 py-3">Thickness</th>
+                                    <th class="px-4 py-3">UV Protection</th>
+                                    <th class="px-4 py-3">Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700 bg-gray-900/40">
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="250" data-type="size">
+                                        250 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1500" data-type="length">1500 m</td>
+                                    <td class="px-4 py-3" data-val-metric="25" data-type="thickness">25 µm</td>
+                                    <td class="px-4 py-3">10–12 Months</td>
+                                    <td class="px-4 py-3">Green, Light Green, White, Black</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="350" data-type="size">
+                                        350 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1500" data-type="length">1500 m</td>
+                                    <td class="px-4 py-3" data-val-metric="25" data-type="thickness">25 µm</td>
+                                    <td class="px-4 py-3">10–12 Months</td>
+                                    <td class="px-4 py-3">Green, Light Green, White, Black</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="500" data-type="size">
+                                        500 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1800" data-type="length">1800 m</td>
+                                    <td class="px-4 py-3" data-val-metric="20" data-type="thickness">20 µm</td>
+                                    <td class="px-4 py-3">10–12 Months</td>
+                                    <td class="px-4 py-3">White, Transparent</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="750" data-type="size">
+                                        750 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1800" data-type="length">1800 m</td>
+                                    <td class="px-4 py-3" data-val-metric="20" data-type="thickness">20 µm</td>
+                                    <td class="px-4 py-3">10–12 Months</td>
+                                    <td class="px-4 py-3">White, Transparent</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TAB: REINLAND-400 -->
+                <div id="tab-reinland-400" class="tab-content hidden transition-opacity duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-white mb-1 flex items-center gap-2">
+                            REINLAND-400
+                            <span
+                                class="text-xs font-normal px-2 py-0.5 rounded bg-orange-900 text-orange-200 border border-orange-700">Premium</span>
+                        </h3>
+                        <p class="text-gray-400 text-sm">Premium silage wrap for long-term storage and high UV exposure.
+                        </p>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-lg border border-gray-700">
+                        <table class="w-full text-left text-sm text-gray-300">
+                            <thead class="bg-gray-800 text-xs uppercase text-gray-400">
+                                <tr>
+                                    <th class="px-4 py-3">Size (Width)</th>
+                                    <th class="px-4 py-3">Length</th>
+                                    <th class="px-4 py-3">Thickness</th>
+                                    <th class="px-4 py-3">UV Protection</th>
+                                    <th class="px-4 py-3">Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700 bg-gray-900/40">
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="500" data-type="size">
+                                        500 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1500" data-type="length">1500 m</td>
+                                    <td class="px-4 py-3" data-val-metric="20" data-type="thickness">20 µm</td>
+                                    <td class="px-4 py-3">18 Months</td>
+                                    <td class="px-4 py-3">Green, Light Green, White, Black</td>
+                                </tr>
+                                <tr class="hover:bg-gray-800/50 transition-colors">
+                                    <td class="px-4 py-3 font-medium text-white" data-val-metric="750" data-type="size">
+                                        750 mm</td>
+                                    <td class="px-4 py-3" data-val-metric="1800" data-type="length">1800 m</td>
+                                    <td class="px-4 py-3" data-val-metric="20" data-type="thickness">20 µm</td>
+                                    <td class="px-4 py-3">18 Months</td>
+                                    <td class="px-4 py-3">Green, Light Green, White, Black</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FOOTER NOTE -->
+            <div class="relative z-10 p-4 border-t border-gray-700 bg-gray-900/90 text-center">
+                <p class="text-xs text-gray-500 italic">
+                    * Imperial values are indicative and rounded for reference.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('tech-specs-modal');
+            const openBtn = document.getElementById('open-specs-btn');
+            const closeBtn = document.getElementById('close-specs-btn');
+            const backdrop = document.getElementById('modal-backdrop');
+            const tabs = document.querySelectorAll('.spec-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const unitToggleBtn = document.getElementById('unit-toggle-btn');
+            const unitKnob = document.getElementById('unit-knob');
+            const labelMetric = document.getElementById('label-metric');
+            const labelImperial = document.getElementById('label-imperial');
+
+            let isMetric = true;
+
+            // Open Modal
+            openBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                // Small delay to allow display:block to apply before opacity transition
+                setTimeout(() => {
+                    modal.classList.add('open');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }, 10);
+            });
+
+            // Close Modal Function
+            const closeModal = () => {
+                modal.classList.remove('open');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            };
+
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            // Close on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) {
+                    closeModal();
+                }
+            });
+
+            // Tab Switching Logic
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active', 'bg-orange-500', 'text-white', 'shadow');
+                        t.classList.add('text-gray-400');
+                    });
+
+                    // Add active class to clicked tab
+                    tab.classList.add('active', 'bg-orange-500', 'text-white', 'shadow');
+                    tab.classList.remove('text-gray-400');
+
+                    // Hide all contents
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                        content.classList.remove('block');
+                        content.style.opacity = '0';
+                    });
+
+                    // Show target content
+                    const targetId = 'tab-' + tab.dataset.tab;
+                    const targetContent = document.getElementById(targetId);
+                    targetContent.classList.remove('hidden');
+                    targetContent.classList.add('block');
+
+                    // Fade in
+                    setTimeout(() => {
+                        targetContent.style.opacity = '1';
+                    }, 50);
+                });
+            });
+
+            // Unit Conversion Logic (Fixed Values)
+            unitToggleBtn.addEventListener('click', () => {
+                isMetric = !isMetric;
+
+                // Toggle UI
+                if (!isMetric) {
+                    unitKnob.classList.add('translate-x-6');
+                    unitToggleBtn.classList.remove('bg-gray-600');
+                    unitToggleBtn.classList.add('bg-orange-500');
+                    labelImperial.classList.replace('text-gray-400', 'text-white');
+                    labelMetric.classList.replace('text-white', 'text-gray-400');
+                } else {
+                    unitKnob.classList.remove('translate-x-6');
+                    unitToggleBtn.classList.add('bg-gray-600');
+                    unitToggleBtn.classList.remove('bg-orange-500');
+                    labelMetric.classList.replace('text-gray-400', 'text-white');
+                    labelImperial.classList.replace('text-white', 'text-gray-400');
+                }
+
+                // Update Values
+                updateValues();
+            });
+
+            const updateValues = () => {
+                const dataCells = document.querySelectorAll('[data-val-metric]');
+
+                dataCells.forEach(cell => {
+                    // Fade animation
+                    cell.style.opacity = '0.5';
+
+                    setTimeout(() => {
+                        const metricVal = cell.dataset.valMetric;
+                        const type = cell.dataset.type;
+
+                        if (isMetric) {
+                            // Restore Metric
+                            if (type === 'size') cell.innerText = `${metricVal} mm`;
+                            if (type === 'length') cell.innerText = `${metricVal} m`;
+                            if (type === 'thickness') cell.innerText = `${metricVal} µm`;
+                        } else {
+                            // Fixed Imperial Values
+                            if (type === 'size') {
+                                const map = {
+                                    '250': '10',
+                                    '350': '14',
+                                    '500': '20',
+                                    '750': '30'
+                                };
+                                cell.innerText = (map[metricVal] || metricVal) + ' inch';
+                            }
+                            if (type === 'length') {
+                                const map = {
+                                    '1500': '4900',
+                                    '1800': '5900'
+                                };
+                                cell.innerText = (map[metricVal] || metricVal) + ' ft';
+                            }
+                            if (type === 'thickness') {
+                                // 25um -> 100 Gauge, 20um -> 80 Gauge
+                                const map = {
+                                    '25': '100',
+                                    '20': '80'
+                                };
+                                cell.innerText = (map[metricVal] || metricVal) + ' Gauge';
+                            }
+                        }
+
+                        cell.style.opacity = '1';
+                    }, 150);
+                });
+            };
+        });
     </script>
 </body>
 
