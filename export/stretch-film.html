@@ -149,10 +149,126 @@
                     class="text-gray-600 dark:text-gray-300 hover:text-orange-500 transition font-medium">Selector</a>
                 <a href="../index.html#contact"
                     class="text-gray-600 dark:text-gray-300 hover:text-orange-500 transition font-medium">Contact</a>
+                <a href="../INTERNAL LOGIN/dist/"
+                    class="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <span>Login</span>
+                </a>
+                <div class="flex items-center gap-4 border-l border-gray-200 dark:border-gray-700 pl-6">
+                    <!-- Language Selector -->
+                    <div class="relative">
+                        <button id="lang-switcher-btn" type="button"
+                            class="flex items-center text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition">
+                            <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                            </svg>
+                            <span id="lang-btn-text" class="font-medium text-sm">EN</span>
+                        </button>
+                        <div id="lang-switcher-dropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20 ring-1 ring-black ring-opacity-5">
+                            <a href="#"
+                                class="lang-option block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                data-lang="en">English (EN)</a>
+                            <a href="#"
+                                class="lang-option block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                data-lang="es">Español (ES)</a>
+                            <a href="#"
+                                class="lang-option block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                data-lang="de">Deutsch (DE)</a>
+                            <a href="#"
+                                class="lang-option block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                data-lang="fr">Français (FR)</a>
+                            <a href="#"
+                                class="lang-option block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                data-lang="hi">हिन्दी (HI)</a>
+                        </div>
+                    </div>
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" type="button"
+                        class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition">
+                        <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 011.414 0l.707-.707a1 1 0 11-1.414-1.414l-.707.707a1 1 0 010 1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
                 <a href="../index.html#contact"
                     class="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold cta-glow">Request a Quote</a>
             </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 border-t border-gray-200 dark:border-gray-700">
+            <a href="../index.html#products" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500"
+                data-lang-key="navProductsMobile">Products</a>
+            <a href="../index.html#quality" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500"
+                data-lang-key="navQualityMobile">Quality</a>
+            <a href="../index.html#selector" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500"
+                data-lang-key="navSelectorMobile">Selector</a>
+            <a href="../index.html#contact" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500"
+                data-lang-key="navContactMobile">Contact</a>
+            <a href="../INTERNAL LOGIN/dist/"
+                class="block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Login
+            </a>
+            <div class="flex items-center gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400"
+                    data-lang-key="navSettings">Settings:</span>
+                <div class="relative">
+                    <button id="lang-switcher-btn-mobile" type="button"
+                        class="flex items-center text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition">
+                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                        </svg>
+                        <span id="lang-btn-text-mobile" class="font-medium text-sm">EN</span>
+                    </button>
+                </div>
+                <button id="theme-toggle-mobile" type="button"
+                    class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition">
+                    <svg id="theme-toggle-dark-icon-mobile" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 10.607a1 1 0 011.414 0l.707-.707a1 1 0 11-1.414-1.414l-.707.707a1 1 0 010 1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <a href="../index.html#contact"
+                class="block mt-4 w-full text-center bg-orange-500 text-white px-5 py-2 rounded-full font-semibold cta-button"
+                data-lang-key="navQuoteMobile">Request
+                a Quote</a>
+        </div>
     </header>
 
     <main>
@@ -649,6 +765,7 @@
         });
     </script>
 
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

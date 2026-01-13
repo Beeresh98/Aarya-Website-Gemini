@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarya Attendance App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': {
+              '50': '#eff6ff',
+              '100': '#dbeafe',
+              '200': '#bfdbfe',
+              '300': '#93c5fd',
+              '400': '#60a5fa',
+              '500': '#3b82f6',
+              '600': '#2563eb',
+              '700': '#1d4ed8',
+              '800': '#1e40af',
+              '900': '#1e3a8a',
+              '950': '#172554',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    .no-select {
+      -webkit-user-select: none;
+      /* Safari */
+      -ms-user-select: none;
+      /* IE 10 and IE 11 */
+      user-select: none;
+      /* Standard syntax */
+    }
+
+    /* Custom Scrollbar Styles */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+
+    /* For Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #c1c1c1 #f1f1f1;
+    }
+
+    /* Print-specific styles */
+    @media print {
+      @page {
+        size: A4;
+        margin: 0.5in;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Hide everything on the page by default when printing */
+      body * {
+        visibility: hidden;
+      }
+
+      /* Make only the print modal and its children visible */
+      .printable-content-wrapper,
+      .printable-content-wrapper * {
+        visibility: visible;
+      }
+
+      /* Position the print modal to take up the entire page */
+      .printable-content-wrapper {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: white !important;
+        /* Use white background to cover any potential bleed-through */
+      }
+
+      /* Additions for better table printing */
+      table {
+        page-break-inside: auto;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      tfoot {
+        display: table-footer-group;
+      }
+
+      .print-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .print-content {
+        padding: 0 !important;
+      }
+
+      /* Styles for checklist */
+      .print-checklist-container {
+        column-count: 2;
+        column-gap: 24px;
+      }
+
+      .print-checklist-column {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        /* Firefox support */
+        margin-bottom: 1rem;
+      }
+
+      /* Footer style modified to appear only at the end of the document */
+      .print-footer {
+        width: 100%;
+        margin-top: 2rem;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.4.0/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="antialiased">
+  <div id="root"></div>
+  <div id="portal-root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
