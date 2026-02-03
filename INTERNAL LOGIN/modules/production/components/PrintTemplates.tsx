@@ -7,23 +7,46 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 // PDF Generation Utility
+// PDF Generation Utility
 const generatePDF = async (elementId: string, filename: string, onComplete: () => void) => {
-    const element = document.getElementById(elementId);
-    if (!element) {
+    const original = document.getElementById(elementId);
+    if (!original) {
         console.error('Element not found for PDF generation');
         return;
     }
 
     try {
-        // Capture the HTML content as canvas
-        const canvas = await html2canvas(element, {
-            scale: 2, // Higher quality
+        // 1. Create a ghost container for fixed-width capture
+        const container = document.createElement('div');
+        container.style.position = 'absolute';
+        container.style.left = '-9999px';
+        container.style.top = '0';
+        container.style.width = '800px'; // Force desktop width (~A4)
+        container.style.backgroundColor = '#ffffff';
+
+        // 2. Clone the content
+        const clone = original.cloneNode(true) as HTMLElement;
+        // Ensure clone takes full width of container
+        clone.style.width = '100%';
+        clone.style.height = 'auto';
+        clone.style.overflow = 'visible';
+        clone.style.maxHeight = 'none'; // Uncap height to capture full content
+
+        container.appendChild(clone);
+        document.body.appendChild(container);
+
+        // 3. Capture the fixed-width clone
+        const canvas = await html2canvas(clone, {
+            scale: 2, // High quality
             useCORS: true,
             logging: false,
             backgroundColor: '#ffffff',
-            windowWidth: element.scrollWidth,
-            windowHeight: element.scrollHeight
+            width: 800, // Enforce capture width
+            windowWidth: 800 // Mock window width
         });
+
+        // 4. Clean up DOM
+        document.body.removeChild(container);
 
         // Calculate PDF dimensions (A4)
         const imgWidth = 210; // A4 width in mm
