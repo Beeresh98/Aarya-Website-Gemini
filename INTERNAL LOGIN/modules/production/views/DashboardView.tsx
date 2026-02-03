@@ -1,79 +1,61 @@
-
 import React from 'react';
-import { Bill, Client, LedgerPayment, FilmType } from '../../../types';
-import { CurrencyDollarIcon, DocumentTextIcon, UsersIcon, TagIcon } from '../../../components/icons/Icons';
+import { FilmType, Client, Bill, LedgerPayment } from '../../types';
 
-const DashboardView: React.FC<{ bills: Bill[], clients: Client[], ledgerPayments: LedgerPayment[], filmTypes: FilmType[] }> = ({ bills, clients, ledgerPayments, filmTypes }) => {
-    // Simple dashboard implementation matching screenshot
-    
-    // Total Revenue: Sum of all PAID bills
-    const paidBills = bills.filter(b => b.status === 'Paid');
-    const totalRevenue = paidBills.reduce((acc, b) => acc + (b.totalAmount || 0), 0);
+interface DashboardViewProps {
+    bills: Bill[];
+    clients: Client[];
+    ledgerPayments: LedgerPayment[];
+    filmTypes: FilmType[];
+}
 
-    // Outstanding: Pending + Dispatched
-    const outstandingBills = bills.filter(b => b.status === 'Generated' || b.status === 'Dispatched');
-    const totalOutstanding = outstandingBills.reduce((acc, b) => acc + (b.totalAmount || 0), 0);
-
-    // Active Clients: Count
-    const activeClients = clients.length;
-
-    // Stock Items: Film Type Count
-    const stockItems = filmTypes.length;
+const DashboardView: React.FC<DashboardViewProps> = ({ bills, clients, ledgerPayments }) => {
+    // Basic Calculations
+    const totalSales = bills.reduce((sum, b) => sum + (b.totalAmount || 0), 0);
+    const totalReceipts = ledgerPayments.reduce((sum, p) => sum + (p.amount || 0), 0);
+    const outstanding = totalSales - totalReceipts;
 
     return (
         <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-slate-800">Production Overview</h3>
-            <p className="-mt-4 text-slate-500">Key metrics and performance indicators.</p>
-            
+            {/* KPI Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {/* Total Revenue */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-start">
-                    <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">TOTAL REVENUE</p>
-                        <p className="text-3xl font-bold text-slate-800">₹{totalRevenue.toLocaleString('en-IN')}</p>
-                        <div className="flex items-center mt-2 text-emerald-500 text-xs font-medium gap-1">
-                            <div className="w-2 h-2 rounded-full bg-emerald-400"></div> Paid bills
-                        </div>
-                    </div>
-                    <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
-                        <CurrencyDollarIcon className="w-6 h-6" />
-                    </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 className="text-slate-500 text-sm font-medium">Total Revenue</h3>
+                    <p className="text-2xl font-bold text-slate-800 mt-2">₹{totalSales.toLocaleString()}</p>
                 </div>
-
-                {/* Outstanding */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-start">
-                    <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">OUTSTANDING</p>
-                        <p className="text-3xl font-bold text-slate-800">₹{totalOutstanding.toLocaleString('en-IN')}</p>
-                        <div className="flex items-center mt-2 text-amber-500 text-xs font-medium gap-1">
-                            <div className="w-2 h-2 rounded-full bg-amber-400"></div> Pending + Dispatched
-                        </div>
-                    </div>
-                    <div className="p-3 bg-amber-50 text-amber-600 rounded-xl">
-                        <DocumentTextIcon className="w-6 h-6" />
-                    </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 className="text-slate-500 text-sm font-medium">Total Receipts</h3>
+                    <p className="text-2xl font-bold text-emerald-600 mt-2">₹{totalReceipts.toLocaleString()}</p>
                 </div>
-
-                {/* Active Clients */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-start">
-                    <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">ACTIVE CLIENTS</p>
-                        <p className="text-3xl font-bold text-slate-800">{activeClients}</p>
-                    </div>
-                    <div className="p-3 bg-blue-50 text-blue-600 rounded-xl">
-                        <UsersIcon className="w-6 h-6" />
-                    </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 className="text-slate-500 text-sm font-medium">Outstanding</h3>
+                    <p className="text-2xl font-bold text-rose-600 mt-2">₹{outstanding.toLocaleString()}</p>
                 </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 className="text-slate-500 text-sm font-medium">Total Clients</h3>
+                    <p className="text-2xl font-bold text-slate-800 mt-2">{clients.length}</p>
+                </div>
+            </div>
 
-                {/* Stock Items */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex justify-between items-start">
-                    <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">STOCK ITEMS</p>
-                        <p className="text-3xl font-bold text-slate-800">{stockItems}</p>
-                    </div>
-                    <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
-                        <TagIcon className="w-6 h-6" />
-                    </div>
+            {/* Recent Bills (Simplified) */}
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                <h3 className="text-lg font-bold text-slate-800 mb-4">Recent Bills</h3>
+                <div className="space-y-3">
+                    {bills.slice(0, 5).map(bill => {
+                        const clientName = clients.find(c => c.id === bill.clientId)?.name || 'Unknown Client';
+                        return (
+                            <div key={bill.id} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                                <div>
+                                    <p className="font-medium text-slate-800">{bill.billNumber}</p>
+                                    <p className="text-sm text-slate-500">{clientName}</p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="font-medium text-slate-800">₹{bill.totalAmount.toLocaleString()}</p>
+                                    <p className="text-xs text-slate-500">{bill.date}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+                    {bills.length === 0 && <p className="text-slate-500">No bills found.</p>}
                 </div>
             </div>
         </div>

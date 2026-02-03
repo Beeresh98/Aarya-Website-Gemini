@@ -444,7 +444,7 @@ const Production: React.FC<{ onExit: () => void }> = ({ onExit }) => {
 
                     {activeTab === 'billing' && <BillingView filmTypes={filmTypes} clients={clients} inventory={inventory} onCreateBill={handleCreateSystemBill} />}
 
-                    {activeTab === 'bills' && <BillsView bills={bills} clients={clients} filmTypes={filmTypes} onAction={handleBillAction} onEditRates={setEditingRateBill} />}
+                    {activeTab === 'bills' && <BillsView bills={bills} clients={clients} filmTypes={filmTypes} inventory={inventory} onAction={handleBillAction} onEditRates={setEditingRateBill} />}
 
                     {activeTab === 'ledger' && <LedgerView
                         clients={clients}
@@ -532,7 +532,7 @@ const Production: React.FC<{ onExit: () => void }> = ({ onExit }) => {
             {editingRateBill && <EditRatesModal bill={editingRateBill} filmTypes={filmTypes} onClose={() => setEditingRateBill(null)} onSubmit={handleUpdateRates} />}
 
             {/* Print Modals */}
-            {printData?.type === 'quotation' && <PrintQuotationModal bill={printData.bill} client={printData.client} filmTypes={filmTypes} onClose={() => setPrintData(null)} />}
+            {printData?.type === 'quotation' && <PrintQuotationModal bill={printData.bill} client={printData.client} filmTypes={filmTypes} inventory={inventory} onClose={() => setPrintData(null)} />}
             {printData?.type === 'checklist' && <PrintChecklistModal bill={printData.bill} client={printData.client} filmTypes={filmTypes} inventory={inventory} onClose={() => setPrintData(null)} />}
 
         </div>
