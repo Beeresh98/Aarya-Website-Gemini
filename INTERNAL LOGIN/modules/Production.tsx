@@ -446,7 +446,7 @@ const Production: React.FC<{ onExit: () => void }> = ({ onExit }) => {
 
                 {/* Viewport */}
                 <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 relative">
-                    {activeTab === 'dashboard' && <DashboardView bills={bills} clients={clients} ledgerPayments={ledgerPayments} filmTypes={filmTypes} />}
+                    {activeTab === 'dashboard' && <DashboardView bills={bills} clients={clients} ledgerPayments={ledgerPayments} filmTypes={filmTypes} inventory={inventory} />}
 
                     {activeTab === 'inventory' && (
                         !selectedFilmType
