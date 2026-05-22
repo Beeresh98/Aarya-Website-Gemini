@@ -252,6 +252,26 @@ const Production: React.FC<{ onExit: () => void }> = ({ onExit }) => {
 
                 if (isNaN(gross)) { errors.push(`Line ${i + 1}: Invalid weight`); continue; }
 
+                const lineMonth = date.substring(0, 7);
+
+                // 1. Check against existing inventory in db
+                const existsInDb = inventory.some(item =>
+                    item.filmTypeId === filmTypeId &&
+                    item.boxNumber === boxNo &&
+                    item.manufacturingDate.substring(0, 7) === lineMonth
+                );
+
+                // 2. Check against items already parsed in this CSV file batch
+                const existsInBatch = newItems.some(item =>
+                    item.boxNumber === boxNo &&
+                    item.manufacturingDate.substring(0, 7) === lineMonth
+                );
+
+                if (existsInDb || existsInBatch) {
+                    errors.push(`Line ${i + 1}: Duplicate box number '${boxNo}' for the month ${lineMonth}`);
+                    continue;
+                }
+
                 const ft = filmTypes.find(f => f.id === filmTypeId);
                 const net = gross - (ft?.packagingWeight || 0);
 

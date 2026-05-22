@@ -70,9 +70,10 @@ export const ImportResultModal: React.FC<{
 export const EditBoxModal: React.FC<{
     item: FilmItem;
     filmType: FilmType;
+    items: FilmItem[];
     onClose: () => void;
     onSave: (id: string, data: { boxNumber: string; manufacturingDate: string; grossWeight: number; netWeight: number }) => Promise<void>;
-}> = ({ item, filmType, onClose, onSave }) => {
+}> = ({ item, filmType, items, onClose, onSave }) => {
     const [formData, setFormData] = useState({
         boxNumber: item.boxNumber,
         manufacturingDate: item.manufacturingDate,
@@ -81,6 +82,20 @@ export const EditBoxModal: React.FC<{
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Month-scoped Duplicate Validation
+        const newMonth = formData.manufacturingDate.substring(0, 7);
+        const isDuplicate = items.some(i => 
+            i.id !== item.id && 
+            i.boxNumber === formData.boxNumber && 
+            i.manufacturingDate.substring(0, 7) === newMonth
+        );
+
+        if (isDuplicate) {
+            alert(`Error: A box with number '${formData.boxNumber}' already exists for this Film Type in the month of ${newMonth}.`);
+            return;
+        }
+
         const net = formData.grossWeight - (filmType.packagingWeight || 0);
         if (net <= 0) {
             alert(`Error: Net weight (${net.toFixed(2)} kg) must be positive. Gross weight must be greater than packaging weight (${filmType.packagingWeight} kg).`);
@@ -255,13 +270,18 @@ export const AddBatchStockModal: React.FC<{
     const lastRowInputRef = useRef<HTMLInputElement>(null);
 
     // Helpers
-    const validateDuplicates = (currentRows: typeof rows) => {
+    const validateDuplicates = (currentRows: typeof rows, dateToCheck = mfgDate) => {
         const dups = new Set<number>();
+        const mfgMonth = dateToCheck.substring(0, 7);
         currentRows.forEach((r, idx) => {
             if (r.boxNumber) {
-                // Check against existing inventory
-                const exists = inventory.some(i => i.filmTypeId === filmType.id && i.boxNumber === r.boxNumber);
-                // Check against other rows in this modal
+                // Check against existing inventory in db for the same film type and month
+                const exists = inventory.some(i => 
+                    i.filmTypeId === filmType.id && 
+                    i.boxNumber === r.boxNumber && 
+                    i.manufacturingDate.substring(0, 7) === mfgMonth
+                );
+                // Check against other rows in this modal batch
                 const isDupeInBatch = currentRows.findIndex((other, otherIdx) => otherIdx !== idx && other.boxNumber === r.boxNumber) !== -1;
 
                 if (exists || isDupeInBatch) {
@@ -343,7 +363,11 @@ export const AddBatchStockModal: React.FC<{
                             type="date"
                             max={today}
                             value={mfgDate}
-                            onChange={e => setMfgDate(e.target.value)}
+                            onChange={e => {
+                                const newDate = e.target.value;
+                                setMfgDate(newDate);
+                                validateDuplicates(rows, newDate);
+                            }}
                             className="bg-white border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
                             required
                         />

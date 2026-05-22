@@ -297,6 +297,7 @@ export const StockDetailView: React.FC<{
                 <EditBoxModal
                     item={editingItem}
                     filmType={filmType}
+                    items={items}
                     onClose={() => setEditingItem(null)}
                     onSave={async (id, data) => {
                         await onUpdateItem(id, data);
