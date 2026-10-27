@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>REINLAND 22 µ Film</title>
-<meta name="description" content="REINLAND 22 µ silage wrap film: same film, one more bale. Work out your saving and get today's price on WhatsApp.">
+<meta name="description" content="REINLAND 22 µ silage wrap film: same roll weight, more metres, 6 more bales a roll. Work out your saving and get a quote on WhatsApp.">
 <meta name="theme-color" content="#F6F7F9">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
 <link rel="canonical" href="https://www.aaryaplastopet.com/22-micron/">
 <meta property="og:title" content="REINLAND 22 µ — Same film. One more bale.">
 <meta property="og:description" content="Work out how much film, how many rolls and how many extra bales REINLAND 22 µ gives you.">
@@ -15,123 +17,90 @@
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YE4GGVNF2N');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+Tamil:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#132A40; --navy-2:#1E3A57; --navy-deep:#0D1F31; --blue:#5468E8; --blue-2:#6F80EE;
-    --grey:#9A978F; --paper:#F6F7F9; --card:#FFFFFF; --line:#DDE0E5; --muted:#7C818A; --ghost:#E4E7EB;
+    --grey:#9A978F; --paper:#F6F7F9; --paper-2:#EDF0F4; --card:#FFFFFF; --line:#DDE0E5; --muted:#6F7682; --ghost:#E4E7EB; --ink2:#3C4A5A;
     --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.56,.64,1);
-    --gut:20px;
+    --gut:20px; --hdr:64px; --max:1320px;
+    --sf:system-ui;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{background:var(--paper);color:var(--navy);font-family:Montserrat,'Noto Sans Tamil',system-ui,sans-serif;
+  body{background:var(--paper);color:var(--navy);font-family:Montserrat,var(--sf),system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
-  html[lang=ta] body{font-family:'Noto Sans Tamil',Montserrat,system-ui,sans-serif}
   img,svg,video{display:block;max-width:100%}
   button,input{font:inherit;color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
   .num{font-family:Montserrat,sans-serif;font-variant-numeric:tabular-nums}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--grey);text-transform:uppercase}
-  html[lang=ta] .eyebrow{letter-spacing:0;font-size:14px}
   h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.02}
-  html[lang=ta] h1, html[lang=ta] h2{letter-spacing:-.01em;line-height:1.2}
-  /* Tamil words run longer: one size down so the headline keeps to two lines */
-  html[lang=ta] .hero h1{font-size:clamp(30px,7.4vw,64px)}
-  html[lang=ta] h2{font-size:clamp(25px,5vw,40px)}
-  h2{font-size:clamp(30px,6vw,48px)}
+  h2{font-size:clamp(30px,4.4vw,56px)}
+  /* Indian scripts: no negative tracking, a little more line height, one size down */
+  html:not([lang=en]) .eyebrow{letter-spacing:.02em;font-size:13px;text-transform:none}
+  html:not([lang=en]) h1,html:not([lang=en]) h2{letter-spacing:0;line-height:1.22}
+  html:not([lang=en]) h2{font-size:clamp(26px,3.6vw,46px)}
 
   /* language swap: fade text out, swap, fade in */
   [data-t]{transition:opacity .18s ease}
-  .swapping [data-t]{opacity:0}
+  .swapping [data-t],.swapping .lt{opacity:0}
+  .lt{transition:opacity .18s ease}
 
   /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:20;background:rgba(246,247,249,.86);backdrop-filter:saturate(1.4) blur(10px);
-    -webkit-backdrop-filter:saturate(1.4) blur(10px);transition:box-shadow .3s ease}
+  header{position:sticky;top:0;z-index:40;height:var(--hdr);background:rgba(246,247,249,.86);
+    backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);transition:box-shadow .3s ease}
   header.scrolled{box-shadow:0 1px 0 var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  header img{height:32px;width:auto}
-  .lang{position:relative;display:flex;background:var(--ghost);border-radius:999px;padding:3px}
-  .lang button{position:relative;z-index:1;border:0;background:none;cursor:pointer;font-size:13px;font-weight:700;
-    padding:7px 13px;border-radius:999px;min-width:58px;transition:color .25s ease}
-  .lang button[aria-pressed=true]{color:#fff}
-  .lang .pill{position:absolute;top:3px;bottom:3px;left:3px;border-radius:999px;background:var(--navy);
-    transition:transform .4s var(--ease),width .4s var(--ease)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:12px}
+  header .logo{height:30px;width:auto}
+  .hdr-right{display:flex;align-items:center;gap:10px}
+  .btn.hdr-cta{display:none}
+  .lang{position:relative}
+  .lang > button{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;border-radius:12px;cursor:pointer;
+    padding:8px 12px;font-size:14px;font-weight:700;transition:border-color .2s ease,box-shadow .2s ease}
+  .lang > button:hover{border-color:#C8CDD5}
+  .lang > button svg{width:16px;height:16px;flex:none}
+  .lang > button .chev{transition:transform .3s var(--ease)}
+  .lang.open > button{border-color:var(--navy);box-shadow:0 0 0 4px rgba(84,104,232,.12)}
+  .lang.open > button .chev{transform:rotate(180deg)}
+  .lang ul{position:absolute;right:0;top:calc(100% + 8px);list-style:none;background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:6px;min-width:220px;box-shadow:0 24px 50px -20px rgba(19,42,64,.35);opacity:0;transform:translateY(-6px) scale(.98);
+    transform-origin:top right;pointer-events:none;transition:opacity .2s ease,transform .3s var(--ease)}
+  .lang.open ul{opacity:1;transform:none;pointer-events:auto}
+  .lang li button{display:flex;width:100%;align-items:baseline;justify-content:space-between;gap:16px;border:0;background:none;cursor:pointer;
+    padding:10px 12px;border-radius:10px;font-size:15px;font-weight:700;text-align:left;transition:background .15s ease}
+  .lang li button small{font-family:Montserrat;font-size:12px;font-weight:600;color:var(--muted)}
+  .lang li button:hover,.lang li button:focus-visible{background:var(--paper);outline:0}
+  .lang li button[aria-selected=true]{background:var(--navy);color:#fff}
+  .lang li button[aria-selected=true] small{color:#A9B4C2}
 
-  /* ---------- hero ---------- */
-  .hero{padding:36px 0 0}
-  .hero .tag{display:inline-flex;align-items:baseline;gap:10px}
-  .hero .tag b{font-family:Montserrat;font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--blue)}
-  .hero h1{font-size:clamp(42px,10vw,84px);margin-top:14px}
-  .hero h1 span{display:block;color:var(--blue)}
-  .hero .lede{margin-top:18px;max-width:520px;font-size:17px;line-height:1.5;font-weight:500;color:#3C4A5A}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;text-decoration:none;
-    background:var(--navy);color:#fff;font-weight:700;font-size:16px;padding:16px 26px;border-radius:14px;
+    background:var(--navy);color:#fff;font-weight:700;font-size:16px;padding:15px 24px;border-radius:14px;
     transition:transform .25s var(--ease),background .25s ease,box-shadow .25s ease;-webkit-tap-highlight-color:transparent}
   .btn:hover{background:var(--navy-2);box-shadow:0 10px 24px -12px rgba(19,42,64,.6)}
   .btn:active{transform:scale(.97)}
-  .btn svg{width:18px;height:18px;transition:transform .3s var(--ease)}
-  .btn:hover svg.down{transform:translateY(3px)}
-  .hero .btn{margin-top:26px}
-  #iso{width:100%;max-width:900px;height:auto;margin:22px auto 0}
+  .btn svg{width:18px;height:18px;flex:none}
+  .btn.blue{background:var(--blue)} .btn.blue:hover{background:#4757D6;box-shadow:0 14px 30px -14px rgba(84,104,232,.8)}
+  .btn.ghost{background:rgba(255,255,255,.1);color:#fff} .btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
+  .btn.sm{padding:10px 16px;font-size:14px;border-radius:12px}
 
-  /* iso scene choreography — transform + opacity only */
-  #iso .fade{opacity:0;transition:opacity .7s ease}
-  #iso .bale{opacity:0;transform:translate(-26px,-15px)}
-  #iso .pop{opacity:0;transform:translateY(10px)}
-  #iso.play .fade{opacity:1}
-  #iso.play .bale{animation:rollIn .8s var(--ease) forwards;animation-delay:var(--d)}
-  #iso.play .bale.xtra{animation:rollInX 1s var(--spring) forwards;animation-delay:var(--d)}
-  #iso.play .pop{animation:popUp .7s var(--spring) forwards,bob 3.2s ease-in-out infinite;animation-delay:var(--d),calc(var(--d) + .7s)}
-  /* redrawn after a language swap: already in place, no replay */
-  #iso.still .fade,#iso.still .bale,#iso.still .pop{opacity:1;transform:none;animation:none}
-  #iso.still .pop{animation:bob 3.2s ease-in-out infinite}
-  @keyframes rollIn{to{opacity:1;transform:none}}
-  @keyframes rollInX{0%{opacity:0;transform:translate(-26px,-15px)}60%{opacity:1}100%{opacity:1;transform:none}}
-  @keyframes popUp{to{opacity:1;transform:none}}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-
-  /* stat strip */
-  .strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy);margin-top:18px}
-  .cell{padding:18px 0 4px}
-  .cell + .cell{padding-left:16px;border-left:1px solid var(--line)}
-  .cell b{display:block;font-family:Montserrat;font-weight:800;font-size:clamp(26px,6vw,44px);letter-spacing:-.02em;line-height:1}
-  .cell b i{font-style:normal;font-size:.5em;font-weight:700;margin-left:3px}
-  .cell span{display:block;margin-top:8px;font-size:13px;font-weight:600;color:var(--muted);line-height:1.35}
-  .cell.old b{color:#B4B8BE;position:relative;width:max-content}
-  .cell.old b::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:3px;background:#B4B8BE;border-radius:2px;
-    transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease) .5s}
-  .strip.in .cell.old b::after{transform:scaleX(1)}
-  .cell.pct b{color:var(--blue)}
-
-  /* ---------- sections ---------- */
-  section.block{padding:84px 0 0}
-  .head{max-width:640px}
-  .head h2{margin-top:12px}
-  .head p{margin-top:14px;font-size:17px;line-height:1.55;font-weight:500;color:#3C4A5A}
-
-  /* proof */
-  .proof{display:grid;gap:28px;align-items:center}
-  .clip{position:relative;border-radius:22px;overflow:hidden;background:var(--navy);aspect-ratio:4/5;max-width:420px;width:100%;
-    box-shadow:0 30px 60px -36px rgba(19,42,64,.55)}
-  .clip video{width:100%;height:100%;object-fit:cover}
-  .clip .badges{position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
-  .clip .badges > span{background:rgba(13,31,49,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;
-    font-weight:700;font-size:13px;padding:8px 12px;border-radius:10px}
-  .clip .badges span b{font-family:Montserrat;font-weight:800}
-  .ruler{position:absolute;top:14px;bottom:62px;right:16px;width:3px;border-radius:3px;background:rgba(255,255,255,.25);overflow:hidden}
-  .ruler i{position:absolute;inset:0;background:#fff;transform:scaleY(0);transform-origin:top;animation:fall 4.6s cubic-bezier(.55,0,.9,.4) infinite}
-  @keyframes fall{0%,22%{transform:scaleY(0)}58%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-
-  /* calculator */
-  .calc{display:grid;gap:22px;margin-top:30px}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+  /* ---------- hero = calculator ---------- */
+  .hero{padding:28px 0 56px}
+  .hero-grid{display:grid;gap:22px}
+  .tag{display:inline-flex;align-items:baseline;gap:10px}
+  .tag b{font-family:Montserrat;font-weight:800;font-size:15px;color:var(--blue)}
+  .hero h1{font-size:clamp(40px,9vw,76px);margin-top:12px}
+  html:not([lang=en]) .hero h1{font-size:clamp(30px,6.4vw,58px)}
+  .hero h1 span{display:block;color:var(--blue)}
+  .hero h1 span:first-child{color:var(--navy)}
+  .lede{margin-top:14px;max-width:560px;font-size:17px;line-height:1.55;font-weight:500;color:var(--ink2)}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+  .inputs{margin-top:24px}
   .readout{display:flex;align-items:baseline;gap:10px}
   .readout b{font-family:Montserrat;font-weight:800;font-size:64px;letter-spacing:-.03em;line-height:1}
   .readout span{font-weight:600;color:var(--muted);font-size:15px}
-  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:none;margin-top:14px;cursor:pointer;touch-action:pan-y}
-  input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:8px;
-    background:linear-gradient(to right,var(--navy) 0 var(--p),var(--ghost) var(--p) 100%)}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:none;margin-top:12px;cursor:pointer;touch-action:pan-y}
+  input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(to right,var(--navy) 0 var(--p),var(--ghost) var(--p) 100%)}
   input[type=range]::-moz-range-track{height:8px;border-radius:8px;background:var(--ghost)}
   input[type=range]::-moz-range-progress{height:8px;border-radius:8px;background:var(--navy)}
   input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-11px;border-radius:50%;
@@ -139,45 +108,7 @@
   input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--navy)}
   input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   .ticks{display:flex;justify-content:space-between;font-family:Montserrat;font-size:12px;font-weight:600;color:var(--muted);margin-top:4px}
-  .seg{position:relative;display:inline-flex;background:var(--ghost);border-radius:12px;padding:3px;margin-top:22px}
-  .seg button{position:relative;z-index:1;border:0;background:none;cursor:pointer;font-weight:700;font-size:14px;padding:9px 18px;border-radius:9px;
-    min-width:96px;transition:color .25s ease}
-  .seg button[aria-pressed=true]{color:#fff}
-  .seg .pill{position:absolute;top:3px;bottom:3px;left:3px;border-radius:9px;background:var(--navy);transition:transform .4s var(--ease),width .4s var(--ease)}
-
-  .result{background:var(--navy);color:#fff;border:0;position:relative;overflow:hidden}
-  .result .eyebrow{color:#A9B4C2}
-  .big{display:flex;align-items:baseline;gap:6px;margin-top:10px;flex-wrap:wrap}
-  .big b{font-family:Montserrat;font-weight:800;font-size:clamp(52px,12vw,76px);letter-spacing:-.035em;line-height:1}
-  .big span{font-weight:700;font-size:18px;color:#C9D0DA}
-  .seg.dark{display:flex;width:100%;margin-top:0;background:rgba(255,255,255,.08)}
-  .seg.dark button{flex:1;min-width:0;padding:9px 0;color:#C9D0DA}
-  .seg.dark button[aria-pressed=true]{color:var(--navy)}
-  .seg.dark .pill{background:#fff}
-  .fadebox{transition:opacity .16s ease}
-  .fadebox.swap{opacity:0}
-  .result .big{margin-top:22px}
-  .bill{margin-top:18px}
-  .bh,.brow{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;column-gap:8px;align-items:baseline}
-  .bh span{font-family:Montserrat;font-size:11px;font-weight:700;letter-spacing:.08em;color:#A9B4C2;text-align:right;padding-bottom:6px}
-  html[lang=ta] .bh span{letter-spacing:0}
-  .bwrap{display:grid;grid-template-rows:1fr;opacity:1;transition:grid-template-rows .45s var(--ease),opacity .3s ease}
-  .bwrap.off{grid-template-rows:0fr;opacity:0}
-  .bwrap > div{overflow:hidden}
-  .brow{padding:12px 0;border-top:1px solid rgba(255,255,255,.12)}
-  .brow small{font-size:12px;font-weight:600;color:#A9B4C2;line-height:1.3}
-  .brow span{text-align:right;font-weight:700;font-size:clamp(13px,3.6vw,16px);white-space:nowrap}
-  .brow .v25{color:#8E9AAB}
-  .brow .v22{color:#fff}
-  .brow .sv{color:#A5B1FF;font-weight:800}
-  /* phones: label on its own line, the three values get the full width */
-  @media (max-width:560px){
-    .bh,.brow{grid-template-columns:repeat(3,1fr)}
-    .bh span:first-child{display:none}
-    .brow small{grid-column:1/-1;margin-bottom:6px}
-  }
-
-  .more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;border:0;background:none;cursor:pointer;font-weight:700;font-size:14px;color:var(--blue);padding:6px 0}
+  .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;border:0;background:none;cursor:pointer;font-weight:700;font-size:14px;color:var(--blue);padding:6px 0}
   .more svg{width:16px;height:16px;transition:transform .35s var(--ease)}
   .more[aria-expanded=true] svg{transform:rotate(180deg)}
   .drawer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
@@ -193,45 +124,150 @@
   .mini small{display:block;margin-top:5px;font-size:11px;color:var(--muted);font-weight:600}
   input[type=number]{-moz-appearance:textfield}
   input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-  .yard{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:22px}
+  .note{margin-top:12px;font-size:12px;line-height:1.5;color:var(--muted);font-weight:500}
+
+  .seg{position:relative;display:flex;width:100%;background:rgba(255,255,255,.08);border-radius:12px;padding:3px}
+  .seg button{position:relative;z-index:1;flex:1;min-width:0;border:0;background:none;cursor:pointer;font-weight:700;font-size:14px;
+    padding:10px 0;border-radius:9px;color:#C9D0DA;transition:color .25s ease}
+  .seg button[aria-pressed=true]{color:var(--navy)}
+  .seg .pill{position:absolute;top:3px;bottom:3px;left:3px;border-radius:9px;background:#fff;transition:transform .4s var(--ease),width .4s var(--ease)}
+  .result{background:var(--navy);color:#fff;border:0;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .fadebox{transition:opacity .16s ease}
+  .fadebox.swap{opacity:0}
+  .big{display:flex;align-items:baseline;gap:6px 12px;margin-top:24px;flex-wrap:wrap}
+  .big b{font-family:Montserrat;font-weight:800;font-size:clamp(56px,11vw,96px);letter-spacing:-.04em;line-height:.95}
+  .big span{font-weight:700;font-size:18px;color:#C9D0DA;max-width:20ch;line-height:1.3}
+  .bill{margin-top:20px}
+  .bh,.brow{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;column-gap:8px;align-items:baseline}
+  .bh span{font-family:Montserrat;font-size:11px;font-weight:700;letter-spacing:.08em;color:#A9B4C2;text-align:right;padding-bottom:6px}
+  .bwrap{display:grid;grid-template-rows:1fr;opacity:1;transition:grid-template-rows .45s var(--ease),opacity .3s ease}
+  .bwrap.off{grid-template-rows:0fr;opacity:0}
+  .bwrap > div{overflow:hidden}
+  .brow{padding:12px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .brow small{font-size:12px;font-weight:600;color:#A9B4C2;line-height:1.3}
+  .brow span{text-align:right;font-weight:700;font-size:clamp(13px,3.6vw,16px);white-space:nowrap}
+  .brow .v25{color:#8E9AAB} .brow .v22{color:#fff} .brow .sv{color:#A5B1FF;font-weight:800}
+  @media (max-width:560px){
+    .bh,.brow{grid-template-columns:repeat(3,1fr)}
+    .bh span:first-child{display:none}
+    .brow small{grid-column:1/-1;margin-bottom:6px}
+  }
+  .yard{display:grid;grid-template-columns:repeat(13,1fr);gap:5px;margin-top:20px}
   .yard i{position:relative;aspect-ratio:1/1.05}
   .yard i svg{position:absolute;inset:0;width:100%;height:100%}
   .yard i .on{clip-path:inset(0 calc(100% - var(--f,0%)) 0 0);transition:clip-path .45s var(--ease)}
-  .legend{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px;font-weight:600;color:#A9B4C2}
-  .legend svg{width:16px;height:17px}
-  .note{margin-top:14px;font-size:12px;line-height:1.5;color:var(--muted);font-weight:500}
+  .legend{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;font-weight:600;color:#A9B4C2}
+  .legend svg{width:16px;height:17px;color:#7C8CF0}
+  .acts{display:flex;gap:10px;margin-top:auto;padding-top:22px}
+  .acts .btn.blue{flex:1 1 auto}
+  @media (max-width:560px){ .acts .btn.ghost{padding:15px 16px} .acts .btn.ghost span{display:none} }
 
-  /* form */
-  .lead{display:grid;gap:26px;margin-top:0}
-  .formcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden;
-    transition:height .5s var(--ease)}
+  /* ---------- sections ---------- */
+  section.block{padding:96px 0}
+  .head{max-width:680px}
+  .head h2{margin-top:12px}
+  .head p{margin-top:14px;font-size:17px;line-height:1.6;font-weight:500;color:var(--ink2)}
+  .band{background:var(--paper-2)}
+
+  /* story: pinned while the bales roll in with the scroll */
+  .story{height:220vh;position:relative}
+  .story .pin{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));display:flex;align-items:center;overflow:hidden}
+  .story .wrap{width:100%;display:grid;gap:12px;align-items:center}
+  #iso{width:100%;height:auto;max-height:52vh}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy);margin-top:14px}
+  .fact{padding:14px 0 0}
+  .fact + .fact{padding-left:14px;border-left:1px solid var(--line)}
+  .fact b{display:block;font-family:Montserrat;font-weight:800;font-size:clamp(24px,3.4vw,40px);letter-spacing:-.02em;line-height:1}
+  .fact b i{font-style:normal;font-size:.5em;margin-left:3px}
+  .fact span{display:block;margin-top:6px;font-size:12px;font-weight:600;color:var(--muted);line-height:1.35}
+  .fact:nth-child(2) b{color:var(--blue)}
+  /* phones and short screens: no pin; the bales still roll in with the scroll as the drawing passes */
+  @media (max-width:859px),(max-height:680px){ .story{height:auto} .story .pin{position:relative;top:0;height:auto;padding:80px 0} }
+  .fact b{white-space:nowrap}
+  @media (max-width:420px){
+    header .logo{height:24px}
+    .lang > button{padding:7px 10px;font-size:13px;gap:6px}
+    .lang > button .chev{display:none}
+    .fact b{font-size:22px}
+  }
+
+  /* proof: the clip grows from a card to the full width as it scrolls in */
+  .proof .head{margin:0 auto;text-align:center}
+  .media{position:relative;margin:40px auto 0;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--navy);
+    border-radius:var(--r,28px);transform:scale(var(--s,.8));transform-origin:center top;will-change:transform}
+  .media video{width:100%;height:100%;object-fit:cover}
+  .media .badges{position:absolute;left:16px;bottom:16px;display:flex;gap:8px;flex-wrap:wrap}
+  .media .badges > span{background:rgba(13,31,49,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-weight:700;font-size:14px;padding:9px 13px;border-radius:11px}
+  .media .badges b{font-family:Montserrat;font-weight:800}
+  @media (max-width:859px){ .proof .media-wrap{padding:0} }
+
+  /* testimonials: horizontal strip */
+  .tst-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+  .arrows{display:none;gap:10px}
+  .arrows button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;
+    transition:border-color .2s ease,transform .2s var(--ease),opacity .2s ease}
+  .arrows button:hover{border-color:var(--navy)} .arrows button:active{transform:scale(.94)} .arrows button:disabled{opacity:.35;cursor:default}
+  .arrows svg{width:20px;height:20px}
+  .track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;margin-top:36px;padding-bottom:8px;
+    padding-inline:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));scroll-padding-inline:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));
+    scrollbar-width:none;cursor:grab}
+  .track::-webkit-scrollbar{display:none}
+  .track.drag{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+  .tcard{flex:none;width:clamp(272px,78vw,380px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s ease;user-select:none}
+  .tcard:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(19,42,64,.45)}
+  .tcard img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--ghost);pointer-events:none}
+  .tcard .tb{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .tcard q{display:block;font-size:16px;line-height:1.55;font-weight:500;color:var(--ink2);quotes:"“" "”"}
+  .tcard q::before{content:open-quote;font-family:Montserrat;font-weight:800;font-size:44px;line-height:0;vertical-align:-.42em;color:var(--blue);margin-right:4px}
+  .tcard q::after{content:close-quote}
+  .tcard .who{margin-top:auto;padding-top:18px}
+  .tcard .who b{display:block;font-weight:800;font-size:16px}
+  .tcard .who span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:2px}
+
+  /* FAQ */
+  .faq-grid{display:grid;gap:30px}
+  .qa{border-top:2px solid var(--navy)}
+  .qi{border-bottom:1px solid var(--line)}
+  .qi button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;border:0;background:none;cursor:pointer;
+    text-align:left;padding:20px 0;font-size:17px;font-weight:700;line-height:1.4}
+  .qi .pm{position:relative;flex:none;width:30px;height:30px;border-radius:50%;background:var(--ghost);transition:background .3s ease,transform .4s var(--ease)}
+  .qi .pm::before,.qi .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--navy);border-radius:2px;transition:transform .4s var(--ease),background .3s ease}
+  .qi .pm::after{transform:rotate(90deg)}
+  .qi.open .pm{background:var(--navy);transform:rotate(180deg)}
+  .qi.open .pm::before,.qi.open .pm::after{background:#fff}
+  .qi.open .pm::after{transform:rotate(0)}
+  .qi .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+  .qi.open .ans{grid-template-rows:1fr}
+  .qi .ans > div{overflow:hidden}
+  .qi .ans p{padding:0 46px 22px 0;font-size:16px;line-height:1.6;font-weight:500;color:var(--ink2)}
+
+  /* lead form */
+  .lead{display:grid;gap:30px}
+  .formcard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;position:relative;overflow:hidden}
   .chip{display:flex;align-items:center;gap:10px;background:#EEF0FD;color:var(--navy);border-radius:12px;padding:10px 12px;font-size:13px;font-weight:600}
-  .chip svg{width:26px;height:26px;flex:none}
+  .chip svg{width:26px;height:26px;flex:none;color:var(--blue)}
   .chip b{font-family:Montserrat;font-weight:800}
   .field{margin-top:16px}
   .field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
   .field label small{font-weight:600;color:var(--muted)}
-  .ctl{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:#fff;
-    transition:border-color .2s ease,box-shadow .2s ease}
+  .ctl{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:border-color .2s ease,box-shadow .2s ease}
   .ctl:focus-within{border-color:var(--navy);box-shadow:0 0 0 4px rgba(84,104,232,.14)}
   .ctl.bad{border-color:#C2410C;animation:nudge .35s ease}
   @keyframes nudge{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
   .ctl .pre{padding:0 0 0 14px;font-family:Montserrat;font-weight:700;color:var(--muted)}
   .ctl input{flex:1;min-width:0;border:0;outline:0;background:none;padding:14px;font-size:16px;font-weight:600}
-  .err{font-size:12px;font-weight:600;color:#C2410C;margin-top:6px;min-height:0;max-height:0;overflow:hidden;opacity:0;
-    transition:max-height .3s var(--ease),opacity .2s ease}
+  .err{font-size:12px;font-weight:600;color:#C2410C;margin-top:6px;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s var(--ease),opacity .2s ease}
   .err.show{max-height:30px;opacity:1}
-  #sendErr.show{max-height:60px;margin-top:10px;line-height:1.5}
-  .consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:13px;line-height:1.45;font-weight:500;color:#3C4A5A;cursor:pointer}
+  #sendErr.show{max-height:60px;margin-top:10px;line-height:1.5;text-align:center}
+  .consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:13px;line-height:1.45;font-weight:500;color:var(--ink2);cursor:pointer}
   .consent input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;border:1.5px solid var(--line);border-radius:7px;
     display:grid;place-items:center;transition:background .2s ease,border-color .2s ease;cursor:pointer;margin-top:1px}
-  .consent input::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);
-    margin-top:-2px;transition:transform .25s var(--spring)}
+  .consent input::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) scale(0);margin-top:-2px;transition:transform .25s var(--spring)}
   .consent input:checked{background:var(--navy);border-color:var(--navy)}
   .consent input:checked::after{transform:rotate(45deg) scale(1)}
   .consent.bad input{border-color:#C2410C}
-  .formcard .btn{width:100%;margin-top:20px;background:var(--blue)}
-  .formcard .btn:hover{background:#4757D6}
+  .formcard .btn{width:100%;margin-top:20px}
   .spin{width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;animation:rot .7s linear infinite;display:none}
   .busy .spin{display:block}.busy .lbl{opacity:.7}
   @keyframes rot{to{transform:rotate(360deg)}}
@@ -247,51 +283,122 @@
   .done.show .tick circle{transition:stroke-dashoffset .7s var(--ease) .25s;stroke-dashoffset:0}
   .done.show .tick path{transition:stroke-dashoffset .45s var(--ease) .8s;stroke-dashoffset:0}
   .done h3{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:18px}
-  .done p{margin-top:8px;font-size:15px;line-height:1.5;color:#3C4A5A;font-weight:500}
-  .done .btn{background:#1F9D55;margin-top:22px}
-  .done .btn:hover{background:#198549}
+  .done p{margin-top:8px;font-size:15px;line-height:1.5;color:var(--ink2);font-weight:500}
+  .done .btn{background:#1F9D55;margin-top:22px} .done .btn:hover{background:#198549}
 
   /* ---------- footer ---------- */
-  footer{margin-top:96px;position:relative;height:150px;display:flex;overflow:hidden}
+  footer{position:relative;height:150px;display:flex;overflow:hidden}
   footer > svg{height:150px;flex:none}
-  /* logo sits on the tall navy block at left, number on the low navy band at right */
-  footer .f img{position:absolute;left:var(--gut);bottom:22px;height:46px;width:auto}
-  footer .f a{position:absolute;right:var(--gut);bottom:0;height:60px;display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
-  footer .f small{font-size:11px;font-weight:700;letter-spacing:.24em;color:#A9B4C2;text-transform:uppercase}
-  @media (max-width:520px){footer .f small{display:none}}
-  html[lang=ta] footer .f small{letter-spacing:0;font-size:12px}
-  footer .f b{font-family:Montserrat;font-size:19px;font-weight:800}
+  footer > svg + svg{margin-left:-1px}  /* overlap the three pieces so no hairline shows at the joins */
+  footer .ftr-brand{position:absolute;left:var(--gut);bottom:22px;display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  footer .ftr-brand img{height:46px;width:auto}
+  footer .ftr-brand b{font-family:Montserrat;font-size:17px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+  footer .ftr-call{position:absolute;right:var(--gut);bottom:0;height:60px;display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  footer .ftr-call small{font-size:11px;font-weight:700;letter-spacing:.2em;color:#A9B4C2;text-transform:uppercase}
+  html:not([lang=en]) footer .ftr-call small{letter-spacing:0;font-size:12px;text-transform:none}
+  footer .ftr-call b{font-family:Montserrat;font-size:19px;font-weight:800}
+  @media (max-width:760px){footer .ftr-call small{display:none}}
+  /* phones: the company name takes the stripe, the phone number moves to the bar below */
+  @media (max-width:599px){footer .ftr-call{display:none}}
+  .copy .tel{font-weight:700;color:#fff}
+  @media (min-width:600px){.copy .tel{display:none}}
+
+  /* ---------- site chrome: same header, menu and footer links as the rest of aaryaplastopet.com ---------- */
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);flex:none}
+  .brand img{width:34px;height:34px}
+  .brand b{font-family:Montserrat;font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1}
+  .brand b small{display:block;font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--grey);margin-top:4px;text-transform:uppercase}
+  @media (max-width:420px){.brand b small{display:none}.brand b{font-size:15px}}
+  .snav{display:none;align-items:center;gap:2px;margin-left:auto}
+  .snav > a,.snav .dd > button{display:flex;align-items:center;gap:6px;border:0;background:none;cursor:pointer;text-decoration:none;font-family:Montserrat;
+    font-weight:600;font-size:14.5px;padding:10px 12px;border-radius:10px;color:var(--ink2);transition:color .2s ease,background .2s ease}
+  .snav > a:hover,.snav .dd > button:hover,.snav .dd:focus-within > button{color:var(--navy);background:var(--ghost)}
+  .dd{position:relative}
+  .dd > button svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+  .dd:hover > button svg,.dd:focus-within > button svg{transform:rotate(180deg)}
+  .dd-panel{position:absolute;top:calc(100% + 8px);left:-8px;width:300px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px;
+    box-shadow:0 24px 48px -24px rgba(19,42,64,.35);opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .2s ease,transform .3s var(--ease),visibility 0s linear .3s}
+  .dd-panel::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+  .dd:hover .dd-panel,.dd:focus-within .dd-panel{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .3s var(--ease)}
+  .dd-panel a{display:block;padding:12px 14px;border-radius:10px;text-decoration:none;color:var(--navy);transition:background .2s ease}
+  .dd-panel a:hover,.dd-panel a[aria-current]{background:var(--paper)}
+  .dd-panel b{display:block;font-size:14.5px;font-weight:700}
+  .dd-panel span{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:2px}
+  .menu-btn{width:42px;height:42px;border:0;background:none;cursor:pointer;display:grid;place-items:center;border-radius:12px;flex:none}
+  .menu-btn i{display:grid}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .35s var(--ease),opacity .2s ease}
+  .menu-btn span + span{margin-top:5px}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sheet{position:fixed;inset:var(--hdr) 0 0 0;z-index:39;background:var(--paper);padding:12px var(--gut) 32px;overflow-y:auto;
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .4s var(--ease),visibility 0s linear .4s}
+  .menu-open .sheet{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .4s var(--ease)}
+  .sheet .grp{padding:16px 0;border-bottom:1px solid var(--line)}
+  .sheet .grp .eyebrow{display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.26em;font-size:12px}
+  .sheet a{display:flex;justify-content:space-between;align-items:center;padding:10px 0;text-decoration:none;color:var(--navy);font-family:Montserrat;font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .sheet a small{font-size:13px;font-weight:600;color:var(--muted)}
+  .crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:Montserrat;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:14px}
+  .crumbs a{color:var(--muted);text-decoration:none}
+  .crumbs a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+  .crumbs span[aria-hidden]{color:#B4B8BE}
+  .rein-mark{height:clamp(30px,3vw,40px);width:auto;margin-bottom:16px}
+  .ftr-links{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;padding-bottom:36px;font-family:Montserrat}
+  .ftr-links > :first-child{grid-column:1/-1}
+  .ftr-links h4{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-bottom:10px}
+  .ftr-links a{display:block;text-decoration:none;font-weight:600;font-size:14.5px;padding:5px 0;color:var(--ink2)}
+  .ftr-links a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+  .ftr-links p{font-size:14px;line-height:1.6;color:var(--ink2);font-weight:500;max-width:340px}
+  .endorse{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .endorse img{width:40px;height:40px}
+  .endorse b{font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .site-ftr{margin-top:96px}
+  .copy{background:var(--navy);color:#8E9AAB;font-family:Montserrat;font-size:12.5px;font-weight:500}
+  .copy .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-top:12px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+  .copy a{color:#A9B4C2;text-decoration:none}
+  @media (min-width:860px){
+    .brand img{width:40px;height:40px} .brand b{font-size:18px}
+    .ftr-links{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+    .ftr-links > :first-child{grid-column:auto}
+  }
+  @media (min-width:1180px){ .snav{display:flex} .menu-btn,.sheet{display:none} }
 
   /* sticky mobile CTA */
-  .dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;transform:translateY(140%);
-    transition:transform .55s var(--ease)}
+  .dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;transform:translateY(140%);transition:transform .55s var(--ease)}
   .dock.show{transform:none}
-  .dock .btn{width:100%;background:var(--blue);box-shadow:0 14px 30px -12px rgba(84,104,232,.7)}
+  .dock .btn{width:100%;box-shadow:0 14px 30px -12px rgba(84,104,232,.7)}
 
-  /* scroll reveal */
-  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform 1s var(--ease);transition-delay:var(--rd,0s)}
+  /* scroll reveal: rise, settle */
+  [data-reveal]{opacity:0;transform:translateY(36px) scale(.985);transition:opacity .9s ease,transform 1.1s var(--ease);transition-delay:var(--rd,0s)}
   [data-reveal].in{opacity:1;transform:none}
 
   @media (min-width:860px){
-    :root{--gut:40px}
-    header .wrap{height:76px} header img{height:38px}
-    .hero{padding-top:56px}
-    .hero .lede{font-size:19px}
-    .proof{grid-template-columns:1fr 1fr;gap:64px}
-    .proof .clip{justify-self:end}
-    .calc{grid-template-columns:1fr 1.1fr;gap:24px;align-items:stretch}
-    .panel{padding:32px}
+    :root{--gut:40px;--hdr:76px}
+    header .logo{height:36px}
+    .btn.hdr-cta{display:inline-flex}
+    .hero{min-height:calc(100vh - var(--hdr));display:flex;align-items:center;padding:32px 0 48px}
+    .hero > .wrap{width:100%}
+    .hero-grid{grid-template-columns:1fr 1.1fr;gap:40px;align-items:stretch}
+    .hero h1{font-size:clamp(40px,4.3vw,68px)}
+    html:not([lang=en]) .hero h1{font-size:clamp(30px,3.4vw,52px)}
+    .panel{padding:30px}
+    .result{padding:34px}
+    .story .wrap{grid-template-columns:4fr 7fr;gap:48px}
+    #iso{max-height:70vh}
+    .media{aspect-ratio:1280/986;width:min(100%,calc((100vh - var(--hdr) - 40px) * 1.298))}
+    .arrows{display:flex}
+    .faq-grid{grid-template-columns:4fr 7fr;gap:64px}
     .lead{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .formcard{padding:32px}
-    .done{inset:32px}
+    .formcard{padding:32px} .done{inset:32px}
     .dock{display:none}
-    footer .f img{height:56px}
-    footer .f b{font-size:24px}
+    footer .ftr-brand img{height:56px} footer .ftr-brand b{font-size:21px} footer .ftr-call b{font-size:24px}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
     html{scroll-behavior:auto}
-    [data-reveal],#iso .bale,#iso .pop,#iso .fade{opacity:1!important;transform:none!important}
+    [data-reveal]{opacity:1!important;transform:none!important}
+    .media{transform:none!important}
   }
 </style>
 </head>
@@ -299,58 +406,77 @@
 
 <header id="top">
   <div class="wrap">
-    <img src="assets/reinland.png" alt="REINLAND Silage Wrap Film" width="136" height="32">
-    <div class="lang" role="group" aria-label="Language">
-      <span class="pill"></span>
-      <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    <a class="brand" href="/" aria-label="Aarya Plastopet home">
+      <img src="assets/aarya.png" alt="" width="40" height="40">
+      <b>Aarya Plastopet<small>Film manufacturer</small></b>
+    </a>
+    <nav class="snav" aria-label="Main">
+      <div class="dd">
+        <button type="button" aria-haspopup="true">Stretch film <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
+        <div class="dd-panel">
+          <a href="/india/stretch-film.html"><b>Stretch film, India</b><span>GST billing, delivery across South India</span></a>
+          <a href="/export/stretch-film.html"><b>Stretch film, export</b><span>FOB / CIF, 20 ft and 40 ft containers</span></a>
+        </div>
+      </div>
+      <div class="dd">
+        <button type="button" aria-haspopup="true">Silage wrap <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg></button>
+        <div class="dd-panel">
+          <a href="/india/silage-film.html"><b>REINLAND, India</b><span>For dairy farms and bale makers</span></a>
+          <a href="/export/silage-film.html"><b>REINLAND, export</b><span>Full container loads, private label</span></a>
+          <a href="/22-micron/" aria-current="page"><b>REINLAND 22 µ</b><span>Same film, more bales</span></a>
+        </div>
+      </div>
+      <a href="/about.html">About</a>
+      <a href="/#quality">Quality</a>
+      <a href="/#export">Export</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="lang" id="lang">
+        <button type="button" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3Z"/></svg>
+          <span id="langName">English</span>
+          <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l5 5 5-5"/></svg>
+        </button>
+        <ul id="langMenu" role="listbox" aria-label="Language"></ul>
+      </div>
+      <a class="btn sm blue hdr-cta" href="#price" data-t="quote"></a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><i><span></span><span></span><span></span></i></button>
     </div>
   </div>
 </header>
 
+<nav class="sheet" aria-label="Mobile">
+  <div class="grp">
+    <span class="eyebrow">Stretch film</span>
+    <a href="/india/stretch-film.html">For India <small>GST billing</small></a>
+    <a href="/export/stretch-film.html">For export <small>FOB / CIF</small></a>
+  </div>
+  <div class="grp">
+    <span class="eyebrow">REINLAND silage wrap</span>
+    <a href="/india/silage-film.html">For India <small>Dairy &amp; bale makers</small></a>
+    <a href="/export/silage-film.html">For export <small>Container loads</small></a>
+    <a href="#calc">REINLAND 22 µ <small>This page</small></a>
+  </div>
+  <div class="grp">
+    <a href="/">Home</a>
+    <a href="/about.html">About us</a>
+    <a href="/#quality">Quality</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
 <main>
-  <!-- ===== hero ===== -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="tag" data-reveal><span class="eyebrow" data-t="newfilm"></span><b>22 µ</b></div>
-      <h1 data-reveal style="--rd:.08s"><span data-t="h1a" style="color:var(--navy)"></span><span data-t="h1b"></span></h1>
-      <p class="lede" data-reveal style="--rd:.16s" data-t="lede"></p>
-      <a class="btn" href="#calc" data-reveal style="--rd:.24s"><span data-t="cta"></span>
-        <svg class="down" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4v12M4.5 10.5 10 16l5.5-5.5"/></svg></a>
-      <svg id="iso" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="25 µ film wraps 6 bales; the same length of REINLAND 22 µ wraps 7"><g id="scene"></g></svg>
-      <div class="strip" data-reveal id="strip">
-        <div class="cell old"><b class="num">175<i>g</i></b><span data-t="sOld"></span></div>
-        <div class="cell new"><b class="num">150<i>g</i></b><span data-t="sNew"></span></div>
-        <div class="cell pct"><b class="num">15%</b><span data-t="sPct"></span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== proof ===== -->
-  <section class="block">
-    <div class="wrap proof">
-      <div class="head" data-reveal>
-        <div class="eyebrow" data-t="pEyebrow"></div>
-        <h2 data-t="pH"></h2>
-        <p data-t="pP"></p>
-      </div>
-      <div class="clip" data-reveal style="--rd:.1s">
-        <video id="drop" src="assets/drop.mp4" poster="assets/drop-poster.jpg" muted loop playsinline preload="metadata"></video>
-        <div class="ruler" aria-hidden="true"><i></i></div>
-        <div class="badges"><span><b>18</b> <em data-t="ft" style="font-style:normal"></em></span><span><b>60</b> <em data-t="kg" style="font-style:normal"></em></span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== calculator ===== -->
-  <section class="block" id="calc">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="eyebrow" data-t="cEyebrow"></div>
-        <h2 data-t="cH"></h2>
-      </div>
-      <div class="calc">
-        <div class="panel" data-reveal>
+  <!-- ===== hero: the calculator is the first thing anyone sees ===== -->
+  <section class="hero" id="calc">
+    <div class="wrap hero-grid">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/india/silage-film.html">Silage wrap</a> <span aria-hidden="true">/</span> <span aria-current="page">REINLAND 22 µ</span></nav>
+        <img class="rein-mark" src="assets/reinland.png" alt="REINLAND silage wrap film" width="153" height="36" data-reveal>
+        <div class="tag" data-reveal><span class="eyebrow" data-t="newfilm"></span><b>22 µ</b></div>
+        <h1 data-reveal style="--rd:.06s"><span data-t="h1a"></span><span data-t="h1b"></span></h1>
+        <p class="lede" data-reveal style="--rd:.12s" data-t="lede"></p>
+        <div class="panel inputs" data-reveal style="--rd:.18s">
           <div class="readout"><b class="num" id="perDay">200</b><span data-t="perDay"></span></div>
           <input type="range" id="slider" min="50" max="500" step="10" value="200" aria-label="Bales per day">
           <div class="ticks"><span>50</span><span>250</span><span>500</span></div>
@@ -365,41 +491,102 @@
           </div></div>
           <p class="note" data-t="note"></p>
         </div>
-        <div class="panel result" data-reveal style="--rd:.1s">
-          <div class="seg dark" role="group" aria-label="Period">
-            <span class="pill"></span>
-            <button type="button" data-per="bale" aria-pressed="false" data-t="pBale"></button>
-            <button type="button" data-per="roll" aria-pressed="false" data-t="pRoll"></button>
-            <button type="button" data-per="day" aria-pressed="false" data-t="pDay"></button>
-            <button type="button" data-per="month" aria-pressed="true" data-t="pMonth"></button>
+      </div>
+
+      <div class="panel result" data-reveal style="--rd:.24s">
+        <div class="seg" role="group" aria-label="Period">
+          <span class="pill"></span>
+          <button type="button" data-per="bale" aria-pressed="false" data-t="pBale"></button>
+          <button type="button" data-per="roll" aria-pressed="false" data-t="pRoll"></button>
+          <button type="button" data-per="day" aria-pressed="false" data-t="pDay"></button>
+          <button type="button" data-per="month" aria-pressed="true" data-t="pMonth"></button>
+        </div>
+        <div class="fadebox" id="fadebox">
+          <div class="big"><b id="headNum" class="num"></b><span id="headTxt" class="lt"></span></div>
+          <div class="bill">
+            <div class="bh"><span></span><span>25 µ</span><span>22 µ</span><span data-t="saveCol"></span></div>
+            <div class="bwrap" id="row0"><div><div class="brow"><small class="lt"></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
+            <div class="bwrap" id="row1"><div><div class="brow"><small class="lt"></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
+            <div class="bwrap" id="row2"><div><div class="brow"><small class="lt"></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
           </div>
-          <div class="fadebox" id="fadebox">
-            <div class="big"><b id="headNum" class="num"></b><span id="headTxt"></span></div>
-            <div class="bill">
-              <div class="bh"><span></span><span>25 µ</span><span>22 µ</span><span data-t="saveCol"></span></div>
-              <div class="bwrap" id="row0"><div><div class="brow"><small></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
-              <div class="bwrap" id="row1"><div><div class="brow"><small></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
-              <div class="bwrap" id="row2"><div><div class="brow"><small></small><span class="num v25"></span><span class="num v22"></span><span class="num sv"></span></div></div></div>
-            </div>
-          </div>
-          <div class="yard" id="yard" aria-hidden="true"></div>
-          <div class="legend"><svg viewBox="0 0 40 42"><use href="#ub"/></svg><span data-t="legend"></span></div>
+        </div>
+        <div class="yard" id="yard" aria-hidden="true"></div>
+        <div class="legend"><svg viewBox="0 0 40 42"><use href="#ub"/></svg><span data-t="legend"></span></div>
+        <div class="acts">
+          <a class="btn blue" href="#price" id="ctaQuote"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa-ic"/></svg><span data-t="ctaQuote"></span></a>
+          <a class="btn ghost" id="share" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg><span data-t="ctaShare"></span></a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== story: bales roll in as you scroll ===== -->
+  <section class="story band" id="story">
+    <div class="pin">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow" data-t="sEyebrow"></div>
+          <h2 data-t="sH"></h2>
+          <p data-t="sP"></p>
+          <div class="facts">
+            <div class="fact"><b class="num">1,705<i class="lt" data-u="uM"></i></b><span data-t="f1"></span></div>
+            <div class="fact"><b class="num">56</b><span data-t="f2"></span></div>
+            <div class="fact"><b class="num">18</b><span data-t="f3"></span></div>
+          </div>
+        </div>
+        <svg id="iso" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="25 µ film wraps 6 bales; the same length of REINLAND 22 µ wraps 7"><g id="scene"></g></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== proof: the drop test grows to full width ===== -->
+  <section class="block proof">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow" data-t="pEyebrow"></div>
+        <h2 data-t="pH"></h2>
+        <p data-t="pP"></p>
+      </div>
+    </div>
+    <div class="wrap media-wrap">
+      <div class="media" id="media">
+        <video id="drop" muted loop playsinline preload="metadata" poster="assets/drop-poster.jpg"></video>
+        <div class="badges"><span><b>18</b> <em data-t="ft" style="font-style:normal"></em></span><span><b>60</b> <em data-t="kg" style="font-style:normal"></em></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== testimonials (hidden until there are published ones) ===== -->
+  <section class="block band" id="tst" hidden>
+    <div class="wrap tst-head">
+      <div class="head" data-reveal><div class="eyebrow" data-t="tEyebrow"></div><h2 data-t="tH"></h2></div>
+      <div class="arrows">
+        <button type="button" id="tPrev" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg></button>
+        <button type="button" id="tNext" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="track" id="track"></div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="block">
+    <div class="wrap faq-grid">
+      <div class="head" data-reveal><div class="eyebrow" data-t="qEyebrow"></div><h2 data-t="qH"></h2></div>
+      <div class="qa" id="faq" data-reveal style="--rd:.08s"></div>
+    </div>
+  </section>
+
   <!-- ===== lead form ===== -->
-  <section class="block" id="price">
+  <section class="block band" id="price">
     <div class="wrap lead">
       <div class="head" data-reveal>
-        <div class="eyebrow" data-t="fEyebrow"></div>
-        <h2 data-t="fH"></h2>
-        <p data-t="fP"></p>
+        <div class="eyebrow" data-t="lEyebrow"></div>
+        <h2 data-t="lH"></h2>
+        <p data-t="lP"></p>
       </div>
       <div class="formcard" id="formcard" data-reveal style="--rd:.1s">
         <form class="stage" id="form" novalidate>
-          <div class="chip"><svg viewBox="0 0 40 42"><use href="#ub"/></svg><span><span data-t="chip"></span> <b class="num" id="chipNums"></b></span></div>
+          <div class="chip"><svg viewBox="0 0 40 42"><use href="#ub"/></svg><span><span data-t="chip"></span> <b class="num lt" id="chipNums"></b></span></div>
           <div class="field">
             <label for="phone" data-t="lPhone"></label>
             <div class="ctl" id="phoneCtl"><span class="pre">+91</span><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="12" placeholder="98765 43210"></div>
@@ -420,162 +607,178 @@
           </div>
           <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label class="consent" id="consentRow"><input type="checkbox" id="consent"><span data-t="consent"></span></label>
-          <button class="btn" type="submit" id="send"><span class="spin"></span><span class="lbl" data-t="send"></span></button>
-          <div class="err" id="sendErr" style="text-align:center"><span data-t="eSend"></span> <a href="https://wa.me/917483643028" target="_blank" rel="noopener" style="color:inherit">WhatsApp +91 74836 43028</a></div>
+          <button class="btn blue" type="submit" id="send"><span class="spin"></span><span class="lbl" data-t="send"></span></button>
+          <div class="err" id="sendErr"><span data-t="eSend"></span> <a href="https://wa.me/917483643028" target="_blank" rel="noopener" style="color:inherit">WhatsApp +91 74836 43028</a></div>
         </form>
         <div class="done" id="done" aria-live="polite">
-          <svg class="tick" viewBox="0 0 64 64" fill="none" stroke="#1F9D55" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>
+          <svg class="tick" viewBox="0 0 64 64" fill="none" stroke="#1F9D55" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>
           <h3 id="thanks"></h3>
           <p data-t="dP"></p>
-          <a class="btn" id="wa" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13.4 13.4 0 0 1-5.1-4.5c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.3Z"/></svg>
-            <span data-t="chat"></span></a>
+          <a class="btn" id="wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa-ic"/></svg><span data-t="chat"></span></a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
+<div class="site-ftr">
+  <div class="wrap ftr-links">
+    <div>
+      <div class="endorse"><img src="assets/aarya.png" alt="" width="40" height="40"><b>Aarya Plastopet</b></div>
+      <p>Makers of stretch film and REINLAND silage wrap. Machenahalli Production Unit, Shimoga, Karnataka, India.</p>
+    </div>
+    <div><h4>Stretch film</h4><a href="/india/stretch-film.html">For India</a><a href="/export/stretch-film.html">For export</a></div>
+    <div><h4>REINLAND silage wrap</h4><a href="/india/silage-film.html">For India</a><a href="/export/silage-film.html">For export</a><a href="/22-micron/">REINLAND 22 µ</a></div>
+    <div><h4>Company</h4><a href="/">Home</a><a href="/about.html">About us</a><a href="/#quality">Quality</a><a href="/#contact">Contact</a><a href="/privacy-policy.html">Privacy policy</a></div>
+  </div>
+</div>
 <footer>
   <!-- carton foot stripe (BrandStripe) -->
-  <svg viewBox="0 0 870 150" preserveAspectRatio="none" style="width:28vw;min-width:120px">
-    <rect x="0" y="1.5" width="870" height="7" fill="#132A40"/><rect x="0" y="32" width="870" height="118" fill="#132A40"/></svg>
-  <svg viewBox="870 0 190 150" style="width:190px">
-    <polyline points="860,5 900,5 976,63" fill="none" stroke="#132A40" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-    <polygon points="860,32 878,32 965,90 1070,90 1070,150 860,150" fill="#132A40"/>
-    <polygon points="1000,32 1070,32 1070,73 1055,73" fill="#9A978F"/></svg>
-  <svg viewBox="1060 0 940 150" preserveAspectRatio="none" style="flex:1">
-    <rect x="1060" y="90" width="940" height="60" fill="#132A40"/><rect x="1060" y="32" width="940" height="41" fill="#9A978F"/></svg>
+  <svg viewBox="0 0 870 150" preserveAspectRatio="none" style="width:28vw;min-width:120px"><rect x="0" y="1.5" width="870" height="7" fill="#132A40"/><rect x="0" y="32" width="870" height="118" fill="#132A40"/></svg>
+  <svg viewBox="870 0 190 150" style="width:190px"><polyline points="860,5 900,5 976,63" fill="none" stroke="#132A40" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><polygon points="860,32 878,32 965,90 1070,90 1070,150 860,150" fill="#132A40"/><polygon points="1000,32 1070,32 1070,73 1055,73" fill="#9A978F"/></svg>
+  <svg viewBox="1060 0 940 150" preserveAspectRatio="none" style="flex:1"><rect x="1060" y="90" width="940" height="60" fill="#132A40"/><rect x="1060" y="32" width="940" height="41" fill="#9A978F"/></svg>
   <div class="f">
-    <img src="assets/aarya-white.png" alt="Aarya Plastopet" width="56" height="56">
-    <a href="tel:+917483643028"><small data-t="call"></small><b>+91 74836 43028</b></a>
+    <a class="ftr-brand" href="/"><img src="assets/aarya-white.png" alt="" width="56" height="56"><b>Aarya Plastopet</b></a>
+    <a class="ftr-call" href="tel:+917483643028"><small data-t="call"></small><b>+91 74836 43028</b></a>
   </div>
 </footer>
+<div class="copy"><div class="wrap"><span>&copy; 2026 Aarya Plastopet. All rights reserved. <a href="/privacy-policy.html">Privacy</a></span><a class="tel" href="tel:+917483643028">+91 74836 43028</a><a href="mailto:info@aaryaplastopet.com">info@aaryaplastopet.com</a></div></div>
 
-<div class="dock" id="dock"><a class="btn" href="#price"><span data-t="dock"></span></a></div>
+<div class="dock" id="dock"><a class="btn blue" href="#price"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa-ic"/></svg><span data-t="dock"></span></a></div>
 
-<!-- upright wrapped bale, used by the calculator yard + chips -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <!-- upright wrapped bale, for the calculator yard and chips -->
     <g id="ub">
       <path d="M4 10v22c0 4.4 7.2 8 16 8s16-3.6 16-8V10" fill="currentColor"/>
       <ellipse cx="20" cy="10" rx="16" ry="8" fill="currentColor" opacity=".72"/>
       <path d="M8 6l24 8M32 6 8 14" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
     </g>
+    <path id="wa-ic" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13.4 13.4 0 0 1-5.1-4.5c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.3Z"/>
   </defs>
 </svg>
 
 <script>
-// ---------- copy ----------
-const COPY = {
-  en: {
-    newfilm: 'New film', h1a: 'Same film.', h1b: 'One more bale.',
-    lede: 'REINLAND 22 µ wraps 7 bales with the film that 25 µ uses for 6.',
-    cta: 'Calculate my saving',
-    sOld: '25 µ film per bale', sNew: 'REINLAND 22 µ per bale', sPct: 'less film, every bale',
-    pEyebrow: 'Drop test', pH: 'Thinner. Not weaker.',
-    pP: 'We dropped wrapped bales from a JCB bucket, 18 feet up. The wrap held.',
-    ft: 'ft drop', kg: 'kg bales',
-    cEyebrow: 'Your saving', cH: 'How many bales do you wrap a day?',
-    perDay: 'bales a day',
-    mine: 'Use my own numbers', lMetres: 'Film per bale', rounds: '≈ 18 rounds', lDays: 'Working days a month',
-    lPrice: 'Your film price', priceHint: 'Optional. Adds film cost to the bill.',
-    note: 'Same roll weight: 1,500 m of 25 µ or 1,705 m of 22 µ (250 mm). About 30 m of film a bale.',
-    pBale: 'Bale', pRoll: 'Roll', pDay: 'Day', pMonth: 'Month', saveCol: 'Saved',
-    hBale: 'less film on every bale', hRoll: 'more bales from every roll', hDay: 'more bales a day, same film', hMonth: 'more bales a month, same film',
-    rLen: 'Film per bale', rWt: 'Film weight', rRollLen: 'Roll length', rBales: 'Bales per roll', rKg: 'Film used', rRolls: 'Rolls used', rCost: 'Film cost',
-    same: 'same', uG: 'g', uKg: 'kg', uM: 'm', uRs: '₹', uPerKg: '/kg',
-    legend: '= 100 extra bales a month',
-    fEyebrow: 'Today’s price', fH: 'Get your saving and today’s price on WhatsApp.',
-    fP: 'Leave your number. We send the price and your saving straight to WhatsApp, no calls unless you ask.',
-    chip: 'Your numbers:', chipFmt: (d, e) => `${d} bales/day · +${e} bales/month`,
-    lPhone: 'WhatsApp number', lName: 'Your name', lTown: 'Town / district', lEmail: 'Email', optional: '(optional)',
-    ePhone: 'Enter a 10-digit mobile number', eName: 'Enter your name', eSend: 'Could not send. Please try again, or',
-    consent: 'Aarya Plastopet may contact me on WhatsApp about REINLAND film.',
-    send: 'Send me the price',
-    thanks: n => `Thank you, ${n}!`, dP: 'We will WhatsApp you today’s price shortly.', chat: 'Chat with us now',
-    waText: (n, d) => `Hi, I'm ${n}. I wrap about ${d} bales a day and want the price of REINLAND 22 µ film.`,
-    call: 'Call / WhatsApp', dock: 'Get today’s price on WhatsApp',
-    iso: { same: 'SAME FILM', rollOld: 'REGULAR', bales: 'BALES' },
-  },
-  ta: {
-    newfilm: 'புதிய ஃபிலிம்', h1a: 'அதே ஃபிலிம்.', h1b: '7வது பேல் இலவசம்.',
-    lede: '25 µ ஃபிலிமில் 6 பேல். அதே அளவு REINLAND 22 µ-ல் 7 பேல்.',
-    cta: 'என் சேமிப்பைக் கணக்கிடு',
-    sOld: '25 µ — ஒரு பேலுக்கு', sNew: 'REINLAND 22 µ — ஒரு பேலுக்கு', sPct: 'குறைவான ஃபிலிம்',
-    pEyebrow: 'டிராப் டெஸ்ட்', pH: 'மெல்லியது. பலவீனமில்லை.',
-    pP: 'சுற்றிய பேல்களை JCB-யிலிருந்து 18 அடி உயரத்தில் போட்டோம். ஃபிலிம் தாங்கியது.',
-    ft: 'அடி உயரம்', kg: 'கிலோ பேல்',
-    cEyebrow: 'உங்கள் சேமிப்பு', cH: 'தினமும் எத்தனை பேல் சுற்றுகிறீர்கள்?',
-    perDay: 'பேல் / நாள்',
-    mine: 'என் கணக்கில் பார்க்க', lMetres: 'ஒரு பேலுக்கு ஃபிலிம்', rounds: '≈ 18 சுற்று', lDays: 'மாதம் வேலை நாட்கள்',
-    lPrice: 'உங்கள் ஃபிலிம் விலை', priceHint: 'விருப்பம். செலவையும் காட்டும்.',
-    note: 'அதே ரோல் எடை: 25 µ-ல் 1,500 மீ, 22 µ-ல் 1,705 மீ (250 mm). ஒரு பேலுக்கு சுமார் 30 மீ.',
-    pBale: 'பேல்', pRoll: 'ரோல்', pDay: 'நாள்', pMonth: 'மாதம்', saveCol: 'சேமிப்பு',
-    hBale: 'ஒவ்வொரு பேலுக்கும் குறைவான ஃபிலிம்', hRoll: 'ஒவ்வொரு ரோலிலும் கூடுதல் பேல்', hDay: 'தினமும் கூடுதல் பேல், அதே ஃபிலிம்', hMonth: 'மாதம் கூடுதல் பேல், அதே ஃபிலிம்',
-    rLen: 'ஒரு பேலுக்கு ஃபிலிம்', rWt: 'ஃபிலிம் எடை', rRollLen: 'ரோல் நீளம்', rBales: 'ஒரு ரோலில் பேல்', rKg: 'ஃபிலிம் தேவை', rRolls: 'ரோல் தேவை', rCost: 'ஃபிலிம் செலவு',
-    same: 'அதே', uG: 'கி', uKg: 'கிலோ', uM: 'மீ', uRs: 'ரூ.', uPerKg: '/கிலோ',
-    legend: '= மாதம் 100 கூடுதல் பேல்',
-    fEyebrow: 'இன்றைய விலை', fH: 'உங்கள் சேமிப்பும் இன்றைய விலையும் WhatsApp-ல்.',
-    fP: 'உங்கள் எண்ணைக் கொடுங்கள். விலையை WhatsApp-ல் அனுப்புகிறோம்.',
-    chip: 'உங்கள் கணக்கு:', chipFmt: (d, e) => `தினமும் ${d} பேல் · மாதம் +${e} பேல்`,
-    lPhone: 'WhatsApp எண்', lName: 'உங்கள் பெயர்', lTown: 'ஊர் / மாவட்டம்', lEmail: 'மின்னஞ்சல்', optional: '(விருப்பம்)',
-    ePhone: '10 இலக்க மொபைல் எண் தேவை', eName: 'பெயர் தேவை', eSend: 'அனுப்ப முடியவில்லை. மீண்டும் முயலுங்கள், அல்லது',
-    consent: 'REINLAND ஃபிலிம் பற்றி Aarya Plastopet என்னை WhatsApp-ல் தொடர்பு கொள்ளலாம்.',
-    send: 'விலையை அனுப்புங்கள்',
-    thanks: n => `நன்றி, ${n}!`, dP: 'இன்றைய விலையை விரைவில் WhatsApp-ல் அனுப்புகிறோம்.', chat: 'இப்போதே பேசுங்கள்',
-    waText: (n, d) => `வணக்கம், நான் ${n}. தினமும் சுமார் ${d} பேல் சுற்றுகிறேன். REINLAND 22 µ விலை வேண்டும்.`,
-    call: 'அழைக்க / WhatsApp', dock: 'விலையை WhatsApp-ல் பெறுங்கள்',
-    iso: { same: 'அதே ஃபிலிம்', rollOld: 'சாதாரண', bales: 'பேல்' },
-  },
-};
+// phone menu (same behaviour as the other pages)
+(function () {
+  const btn = document.querySelector('.menu-btn');
+  const set = open => { document.body.classList.toggle('menu-open', open); btn.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; };
+  btn.addEventListener('click', () => set(!document.body.classList.contains('menu-open')));
+  document.querySelectorAll('.sheet a').forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+})();
+</script>
+<script src="i18n.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const IN = n => n.toLocaleString('en-IN');
+const clamp01 = v => Math.max(0, Math.min(1, v));
+const easeOut = k => 1 - Math.pow(1 - k, 3);
+const nextFrame = fn => requestAnimationFrame(() => requestAnimationFrame(fn));
+const PAGE_URL = 'https://www.aaryaplastopet.com/22-micron/';
+let lang = 'en', per = 'month';
 
 // ---------- film maths: same roll weight, 22 µ runs longer ----------
 // 25 µ roll = 1,500 m; same weight in 22 µ = 1,500 × 25 / 22 = 1,705 m. 250 mm LLDPE at 0.92 g/cm³.
 const ROLL25 = 1500, ROLL22 = ROLL25 * 25 / 22;
 const GPM25 = 0.25 * 25 * 0.92, GPM22 = GPM25 * 22 / 25;   // grams per metre: 5.75 / 5.06
-const IN = n => n.toLocaleString('en-IN');
 const num = (id, dflt) => { const v = parseFloat(document.getElementById(id).value); return v > 0 ? v : dflt; };
 const metres = () => num('inMetres', 30), days = () => num('inDays', 30);
 const extraPerMonth = d => Math.round(d * days() * (ROLL22 / ROLL25 - 1));   // 200/day → 818
 
-let lang = 'en', per = 'month';
-const $ = s => document.querySelector(s);
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+// ---------- language ----------
+const LS_KEY = 'reinland22.lang';
+const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const EN_NAME = { en: 'English', kn: 'Kannada', ta: 'Tamil', hi: 'Hindi', mr: 'Marathi', te: 'Telugu', ml: 'Malayalam', gu: 'Gujarati', pa: 'Punjabi' };
+const fontsLoaded = new Set();
+function loadFont(l) {
+  const fam = LANG_FONT[l];
+  if (!fam || fontsLoaded.has(fam)) return Promise.resolve();
+  fontsLoaded.add(fam);
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `https://fonts.googleapis.com/css2?family=${fam.replace(/ /g, '+')}:wght@500;600;700;800&display=swap`;
+  document.head.appendChild(link);
+  return new Promise(r => { link.onload = () => document.fonts.load(`700 16px "${fam}"`).then(r, r); link.onerror = r; setTimeout(r, 1500); });
+}
+function buildMenu() {
+  $('#langMenu').innerHTML = LANGS.map(l =>
+    `<li><button type="button" role="option" data-l="${l}" aria-selected="${l === lang}">${COPY[l].name}<small>${l === 'en' ? '' : EN_NAME[l]}</small></button></li>`).join('');
+}
 function applyCopy() {
   const t = COPY[lang];
   document.documentElement.lang = lang;
+  document.documentElement.style.setProperty('--sf', LANG_FONT[lang] ? `'${LANG_FONT[lang]}'` : 'system-ui');
   document.querySelectorAll('[data-t]').forEach(e => { const v = t[e.dataset.t]; if (typeof v === 'string') e.textContent = v; });
-  if (window.render) render(false);
+  document.querySelectorAll('[data-u]').forEach(e => e.textContent = ' ' + t[e.dataset.u]);
+  $('#langName').textContent = t.name;
+  buildMenu(); buildFaq(); renderTestimonials();
+  render(false); drawIso(); scrub();
+  requestAnimationFrame(() => movePill());
+}
+let userPicked = false;
+async function setLang(l, animate = true) {
+  if (!COPY[l]) return;
+  await loadFont(l);
+  if (!animate) { lang = l; applyCopy(); return; }
+  document.body.classList.add('swapping');
+  setTimeout(() => { lang = l; applyCopy(); requestAnimationFrame(() => document.body.classList.remove('swapping')); }, 180);
+}
+// dropdown
+const langBox = $('#lang');
+const closeMenu = () => { langBox.classList.remove('open'); $('#langBtn').setAttribute('aria-expanded', 'false'); };
+$('#langBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  const open = !langBox.classList.contains('open');
+  langBox.classList.toggle('open', open);
+  $('#langBtn').setAttribute('aria-expanded', open);
+  if (open) $('#langMenu [aria-selected=true]')?.focus();
+});
+$('#langMenu').addEventListener('click', e => {
+  const b = e.target.closest('button[data-l]'); if (!b) return;
+  userPicked = true; store.set(LS_KEY, b.dataset.l); closeMenu();
+  if (b.dataset.l !== lang) setLang(b.dataset.l);
+  if (window.gtag) gtag('event', 'select_language', { language: b.dataset.l });
+});
+document.addEventListener('click', e => { if (!langBox.contains(e.target)) closeMenu(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+// First visit: ?lang= link > the visitor's saved pick > their state (from a geo lookup) > browser > English.
+function pickStartLang() {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q && COPY[q]) { userPicked = true; return q; }
+  const saved = store.get(LS_KEY);
+  if (saved && COPY[saved]) { userPicked = true; return saved; }
+  const nav = (navigator.languages || []).map(x => x.slice(0, 2)).find(x => x !== 'en' && COPY[x]);
+  return nav || 'en';
+}
+function geoLang() {
+  if (userPicked) return;
+  const ctl = new AbortController(); setTimeout(() => ctl.abort(), 3000);
+  fetch('https://get.geojs.io/v1/ip/geo.json', { signal: ctl.signal }).then(r => r.json()).then(g => {
+    if (userPicked || g.country_code !== 'IN') return;
+    const l = STATE_LANG[g.region];
+    if (l && l !== lang) setLang(l);
+  }).catch(() => {});
 }
 
-// ---------- segmented pills (language + period) ----------
-function movePill(group) {
-  const on = group.querySelector('[aria-pressed=true]'), pill = group.querySelector('.pill');
+// ---------- segmented pill ----------
+function movePill() {
+  const g = $('.seg'), on = g.querySelector('[aria-pressed=true]'), pill = g.querySelector('.pill');
   pill.style.width = on.offsetWidth + 'px';
   pill.style.transform = `translateX(${on.offsetLeft - 3}px)`;
 }
-document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
-  if (b.dataset.lang === lang) return;
-  document.querySelectorAll('.lang button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  movePill($('.lang'));
-  document.body.classList.add('swapping');
-  setTimeout(() => {
-    lang = b.dataset.lang; applyCopy(); drawIso(false);
-    requestAnimationFrame(() => { movePill($('.seg')); document.body.classList.remove('swapping'); });
-  }, 180);
-}));
 // period switch: the bill fades out, swaps units, fades back in (numbers can't tween from g to kg)
 document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
   if (b.dataset.per === per) return;
   per = b.dataset.per;
   document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  movePill($('.seg'));
+  movePill();
   const box = $('#fadebox');
   box.classList.add('swap');
   setTimeout(() => { render(false); box.classList.remove('swap'); }, reduce ? 0 : 170);
+  if (window.gtag) gtag('event', 'calc_period', { period: per });
 }));
 
 // ---------- smooth number tweens ----------
@@ -585,11 +788,11 @@ function tweenTo(el, to, fmt, animate = true) {
   const from = cur ? cur.value : to;
   if (cur) cancelAnimationFrame(cur.raf);
   if (reduce || !animate || from === to) { el.textContent = fmt(to); tweens.set(el, { value: to }); return; }
-  const t0 = performance.now(), dur = 520, st = { value: from };
+  const t0 = performance.now(), dur = 560, st = { value: from };
   tweens.set(el, st);
   const step = now => {
-    const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-    st.value = from + (to - from) * e;
+    const k = Math.min(1, (now - t0) / dur);
+    st.value = from + (to - from) * easeOut(k);
     el.textContent = fmt(k < 1 ? st.value : to);
     if (k < 1) st.raf = requestAnimationFrame(step); else st.value = to;
   };
@@ -598,12 +801,11 @@ function tweenTo(el, to, fmt, animate = true) {
 
 // ---------- calculator ----------
 const slider = $('#slider'), yard = $('#yard');
-const SLOTS = 25; // 500/day max → 2,500 extra bales/month → 25 bales of 100
+const SLOTS = 26; // up to 500/day × 31 days → 2,114 extra bales → 22 bales of 100
 for (let i = 0; i < SLOTS; i++) {
   const s = document.createElement('i');
-  s.innerHTML = '<svg viewBox="0 0 40 42" style="color:rgba(255,255,255,.12)"><use href="#ub"/></svg>' +
-                '<svg viewBox="0 0 40 42" class="on" style="color:#7C8CF0"><use href="#ub"/></svg>';
-  s.firstChild.nextSibling.style.transitionDelay = (i * 12) + 'ms';
+  s.innerHTML = '<svg viewBox="0 0 40 42" style="color:rgba(255,255,255,.12)"><use href="#ub"/></svg><svg viewBox="0 0 40 42" class="on" style="color:#7C8CF0"><use href="#ub"/></svg>';
+  s.lastChild.style.transitionDelay = (i * 14) + 'ms';
   yard.appendChild(s);
 }
 // each period is a headline + up to three bill rows of { label, 25 µ, 22 µ, saved, format }
@@ -636,9 +838,9 @@ function bill() {
   };
 }
 function render(animate = true) {
-  const d = +slider.value, b = bill();
+  const d = +slider.value, b = bill(), t = COPY[lang];
   slider.style.setProperty('--p', ((d - slider.min) / (slider.max - slider.min) * 100) + '%');
-  tweenTo($('#perDay'), d, IN, animate);
+  tweenTo($('#perDay'), d, v => IN(Math.round(v)), animate);
   tweenTo($('#headNum'), b.head.v, b.head.f, animate);
   $('#headTxt').textContent = b.head.t;
   b.rows.forEach((r, i) => {
@@ -649,25 +851,26 @@ function render(animate = true) {
     l.textContent = r.l;
     tweenTo(a, r.a, r.f, animate);
     tweenTo(c, r.b, r.f, animate);
-    if (r.s == null) { tweens.delete(s); s.textContent = COPY[lang].same; } else tweenTo(s, r.s, r.sf || r.f, animate);
+    if (r.s == null) { tweens.delete(s); s.textContent = t.same; } else tweenTo(s, r.s, r.sf || r.f, animate);
   });
   const hundreds = extraPerMonth(d) / 100;
-  [...yard.children].forEach((s, i) => s.lastChild.style.setProperty('--f', Math.max(0, Math.min(1, hundreds - i)) * 100 + '%'));
-  updateChip();
-}
-function updateChip() {
-  const d = +slider.value;
-  $('#chipNums').textContent = COPY[lang].chipFmt(IN(d), IN(extraPerMonth(d)));
+  [...yard.children].forEach((s, i) => s.lastChild.style.setProperty('--f', clamp01(hundreds - i) * 100 + '%'));
+  const e = IN(extraPerMonth(d)), m = metres();
+  $('#chipNums').textContent = t.chipFmt(IN(d), e);
+  $('#share').href = 'https://wa.me/?text=' + encodeURIComponent(t.shareText(IN(d), e, Math.floor(ROLL25 / m), Math.floor(ROLL22 / m), PAGE_URL));
 }
 slider.addEventListener('input', () => render());
+slider.addEventListener('change', () => window.gtag && gtag('event', 'calc_bales', { bales_per_day: +slider.value }), { passive: true });
 ['inMetres', 'inDays', 'inPrice'].forEach(id => document.getElementById(id).addEventListener('input', () => render()));
 $('#moreBtn').addEventListener('click', e => {
   const open = e.currentTarget.getAttribute('aria-expanded') !== 'true';
   e.currentTarget.setAttribute('aria-expanded', open);
   $('#drawer').classList.toggle('open', open);
 });
+$('#share').addEventListener('click', () => window.gtag && gtag('event', 'share', { method: 'whatsapp', content_type: 'calculation' }));
+$('#ctaQuote').addEventListener('click', () => setTimeout(() => $('#phone').focus({ preventScroll: true }), 700));
 
-// ---------- isometric hero (from the 22 µ poster's iso engine) ----------
+// ---------- isometric scene (from the 22 µ poster's iso engine) ----------
 const NS = 'http://www.w3.org/2000/svg', scene = $('#scene'), iso = $('#iso');
 const C30 = 0.8660254, RAD = Math.PI / 180;
 const P = (x, y, z) => [(x - y) * C30, (x + y) * 0.5 - z];
@@ -678,7 +881,8 @@ function el(tag, attrs, parent = target) {
   for (const k in attrs) e.setAttribute(k, attrs[k]);
   parent.appendChild(e); return e;
 }
-function group(cls, delay) { const g = el('g', { class: cls }, scene); if (delay != null) g.style.setProperty('--d', delay + 'ms'); target = g; return g; }
+// every group carries when (0..1 of the scroll) it starts and how long it takes
+function group(kind, at = 0, len = .12) { const g = el('g', { 'data-k': kind, 'data-at': at, 'data-len': len }, scene); target = g; return g; }
 const EDGE = { stroke: '#132A40', 'stroke-opacity': .18, 'stroke-width': .8, 'stroke-linejoin': 'round' };
 const poly = (a, fill, extra = {}) => el('polygon', { points: pts(a), fill, ...EDGE, ...extra });
 const line = (a, b, stroke, w = 1, extra = {}) => el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke, 'stroke-width': w, 'stroke-linecap': 'round', ...extra });
@@ -722,26 +926,25 @@ function cylZ(cx, cy, z0, z1, r, c) {
   poly(ringZ(cx, cy, z1, r), c.cap);
   if (c.core) poly(ringZ(cx, cy, z1, r * .38, 32), c.core);
 }
-const FONT = () => lang === 'ta' ? "'Noto Sans Tamil', Montserrat" : 'Montserrat';
+const FONT = () => LANG_FONT[lang] ? `'${LANG_FONT[lang]}', Montserrat` : 'Montserrat';
 function isoText(str, x, y, z, size, fill, weight = 800, anchor = 'start', spacing = 0) {
   const [sx, sy] = P(x, y, z);
   const t = el('text', { transform: `matrix(${C30},.5,${-C30},.5,${sx},${sy})`, 'font-family': FONT(), 'font-weight': weight,
-    'font-size': size, fill, 'text-anchor': anchor, 'letter-spacing': lang === 'ta' ? 0 : spacing });
+    'font-size': size, fill, 'text-anchor': anchor, 'letter-spacing': lang === 'en' ? spacing : 0 });
   t.textContent = str; return t;
 }
 function flatText(str, p, size, fill, weight = 800, anchor = 'middle', spacing = 0) {
-  const t = el('text', { x: p[0], y: p[1], 'font-family': FONT(), 'font-weight': weight, 'font-size': size, fill, 'text-anchor': anchor, 'letter-spacing': lang === 'ta' ? 0 : spacing });
+  const t = el('text', { x: p[0], y: p[1], 'font-family': FONT(), 'font-weight': weight, 'font-size': size, fill, 'text-anchor': anchor, 'letter-spacing': lang === 'en' ? spacing : 0 });
   t.textContent = str; return t;
 }
 const NAVY = { top: '#2A4766', left: '#132A40', right: '#0D1F31' };
 const BODY = { top: '#F1F2EE', left: '#DCDED7', right: '#BFC2B9' };
 const BLUE = { top: '#7C8CF0', left: '#5468E8', right: '#3F51C7' };
-const SLAB = { top: '#ECEEF1', left: '#D9DCE1', right: '#C6CAD1' };
+const SLAB = { top: '#E6E9EE', left: '#D3D7DD', right: '#C1C5CC' };
 const TYRE = { body: '#1B2533', cap: '#243142', hub: '#A2A69B' };
 const BALE_OLD = { body: '#C3C7CD', cap: '#D4D7DC', sheen: .35, bands: .55, crown: .55 };
 const BALE_NEW = { body: '#132A40', cap: '#1E3A57', sheen: .14, bands: .22, crown: .22 };
 const BALE_XTRA = { body: '#5468E8', cap: '#6F80EE', sheen: .2, bands: .3, crown: .3 };
-
 const R = 34, D = 2 * R, PITCH7 = 84, L = PITCH7 * 7, LANE_W = 82, BALE_LEN = 62, LA = 0, LB = 150, SX0 = -120, SX1 = L + 190;
 
 function drawMachine(X0, Y0) {
@@ -773,15 +976,15 @@ function drawMachine(X0, Y0) {
   cylY(X0 + 112, 27, Y0 + 114, Y0 + 130, 27, TYRE);
   M(80, 112, 58, 146, 132, 62, NAVY);
 }
-// slab + film-length ticks (static), then each bale in its own animated group
-function lane(y0, n, colour, extra, t0, step) {
-  group('fade');
+// slab + film-length ticks, then each bale in its own group that rolls in on cue
+function lane(y0, n, colour, extra, at0, step) {
+  group('fade', 0, .1);
   box(SX0, y0, -10, SX1, y0 + LANE_W, 0, SLAB);
   const pitch = L / n, bY0 = y0 + (LANE_W - BALE_LEN) / 2, bY1 = bY0 + BALE_LEN;
   for (let k = 0; k <= n; k++) line(P(k * pitch, y0 + 6, 0), P(k * pitch, y0 + LANE_W - 6, 0), '#132A40', k % n ? .8 : 1.6, { 'stroke-opacity': k % n ? .22 : .55 });
   for (let i = 0; i < n; i++) {
     const x = extra && i === n - 1;
-    group(x ? 'bale xtra' : 'bale', t0 + i * step + (x ? 260 : 0));
+    group('bale', x ? .66 : at0 + i * step, x ? .14 : .1);
     const cx = (i + .5) * pitch;
     poly([P(cx - R * .8, bY0 - 1, 0), P(cx + R * 1.15, bY0 - 1, 0), P(cx + R * 1.15, bY1 + 6, 0), P(cx - R * .8, bY1 + 6, 0)], '#132A40', { 'fill-opacity': .09, stroke: 'none' });
     cylY(cx, R, bY0, bY1, R, x ? extra : colour);
@@ -794,69 +997,174 @@ function roll(x, y, c, top, bottom, colour) {
   flatText(top, [p[0], p[1] - 52], 11, '#8B8F96', 700, 'middle', 2.6);
   flatText(bottom, [p[0], p[1] - 30], 19, colour, 800, 'middle');
 }
-function drawIso(animate) {
+function drawIso() {
   const T = COPY[lang].iso;
   scene.replaceChildren();
-  iso.classList.toggle('still', !animate);
-  group('fade');
+  group('fade', 0, .1);
   for (const x of [0, L]) line(P(x, LA - 20, 0), P(x, LB + LANE_W + 38, 0), '#132A40', 1, { 'stroke-dasharray': '4 5', 'stroke-opacity': .45 });
   drawMachine(-470, 52);
-
-  lane(LA, 6, BALE_OLD, null, 250, 150);
-  group('fade');
+  lane(LA, 6, BALE_OLD, null, .06, .055);
+  group('fade', 0, .1);
   roll(-62, LA + LANE_W / 2, { body: '#C3C7CD', cap: '#D4D7DC', core: '#8B8F96', sheen: .35, band: [30, 44, '#B0B4BA'] }, T.rollOld, '25 µ', '#9AA0A8');
-  group('pop', 1250);
+  group('pop', .42);
   isoText('6', L + 44, LA + 66, 0, 64, '#B0B4BA', 800);
   isoText(T.bales, L + 92, LA + 66, 0, 17, '#9AA0A8', 700, 'start', 2);
-
-  const b = lane(LB, 7, BALE_NEW, BALE_XTRA, 450, 150);
-  group('fade');
+  const b = lane(LB, 7, BALE_NEW, BALE_XTRA, .2, .055);
+  group('fade', 0, .1);
   roll(-62, LB + LANE_W / 2, { body: '#132A40', cap: '#1E3A57', core: '#9A978F', sheen: .16, band: [30, 44, '#5468E8'] }, 'REINLAND', '22 µ', '#132A40');
-  group('pop', 1750);
+  group('pop', .74);
   isoText('7', L + 44, LB + 66, 0, 64, '#132A40', 800);
   isoText(T.bales, L + 92, LB + 66, 0, 17, '#132A40', 700, 'start', 2);
-  group('pop', 1850);
+  group('pop', .8);
   const top = P(6.5 * b.pitch, (b.bY0 + b.bY1) / 2, D);
   flatText('+1', [top[0] + 4, top[1] - 26], 30, '#5468E8', 800);
-
-  group('fade');
+  group('fade', .3, .2);
   const dy = LB + LANE_W + 30;
   line(P(0, dy, 0), P(L, dy, 0), '#132A40', 1.2, { 'stroke-opacity': .6 });
   for (const x of [0, L]) line(P(x, dy - 8, 0), P(x, dy + 8, 0), '#132A40', 1.2, { 'stroke-opacity': .6 });
   isoText(T.same, L / 2, dy + 26, 0, 16, '#132A40', 700, 'middle', 3);
   target = scene;
-
-  // fit once with the English labels so the drawing never jumps on a language swap
   if (!iso.getAttribute('viewBox')) {
     const bb = scene.getBBox(), pad = 14;
     iso.setAttribute('viewBox', `${bb.x - pad} ${bb.y - pad} ${bb.width + pad * 2} ${bb.height + pad * 2}`);
   }
+  isoGroups = [...scene.children].map(g => ({ g, k: g.dataset.k, at: +g.dataset.at, len: +g.dataset.len, last: -1 }));
+}
+let isoGroups = [];
+function paintIso(p) {
+  for (const o of isoGroups) {
+    const q = Math.round(easeOut(clamp01((p - o.at) / o.len)) * 1000) / 1000;
+    if (q === o.last) continue;
+    o.last = q;
+    o.g.style.opacity = q;
+    if (o.k === 'bale') o.g.style.transform = q === 1 ? '' : `translate(${(-26 * (1 - q)).toFixed(2)}px,${(-15 * (1 - q)).toFixed(2)}px)`;
+    else if (o.k === 'pop') o.g.style.transform = q === 1 ? '' : `translateY(${(12 * (1 - q)).toFixed(2)}px)`;
+  }
 }
 
-// ---------- reveal on scroll, video play/pause, header + dock ----------
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-}), { rootMargin: '0px 0px -8% 0px', threshold: .12 });
-// whatever is on screen at load animates on the first painted frame, without waiting for the observer
+// ---------- scroll-linked motion (one rAF per frame, transform/opacity only) ----------
+const story = $('#story'), media = $('#media');
+// 0 when the section's top is halfway up the screen, 1 when its pinned stretch has scrolled past
+function progress(section, pinned) {
+  const r = section.getBoundingClientRect(), vh = innerHeight;
+  if (!pinned) return clamp01((vh - r.top) / (vh * .85));
+  const pinH = vh - parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hdr'));
+  return clamp01((vh * .5 - r.top) / Math.max(1, vh * .5 + r.height - pinH));
+}
+function scrub() {
+  if (reduce) { paintIso(1); return; }
+  const pinned = getComputedStyle(story.querySelector('.pin')).position === 'sticky';
+  paintIso(progress(pinned ? story : iso, pinned) * 1.08);
+  const r = media.parentElement.getBoundingClientRect(), vh = innerHeight;
+  const k = easeOut(clamp01((vh - r.top) / (vh * .8)));
+  media.style.setProperty('--s', (.78 + .22 * k).toFixed(4));
+  media.style.setProperty('--r', (28 * (1 - k)).toFixed(1) + 'px');
+}
+let ticking = false;
+addEventListener('scroll', () => {
+  $('header').classList.toggle('scrolled', scrollY > 8);
+  if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; scrub(); }); }
+}, { passive: true });
+addEventListener('resize', () => { movePill(); scrub(); });
+
+// ---------- reveal on scroll, video, dock ----------
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px', threshold: .1 });
 const onScreen = e => e.getBoundingClientRect().top < innerHeight * .92;
-const nextFrame = fn => requestAnimationFrame(() => requestAnimationFrame(fn));
 document.querySelectorAll('[data-reveal]').forEach(e => onScreen(e) ? nextFrame(() => e.classList.add('in')) : io.observe(e));
 
-new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { iso.classList.add('play'); }
-}), { threshold: .45 }).observe(iso);
-const isoBoot = () => { const r = iso.getBoundingClientRect(); if (r.top + r.height * .45 < innerHeight) nextFrame(() => iso.classList.add('play')); };
-
 const vid = $('#drop');
-new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? vid.play().catch(() => {}) : vid.pause()), { threshold: .4 }).observe(vid);
+vid.src = matchMedia('(min-width:860px)').matches ? 'assets/drop-wide.mp4' : 'assets/drop.mp4';
+if (matchMedia('(min-width:860px)').matches) vid.poster = 'assets/drop-wide-poster.jpg';
+new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? vid.play().catch(() => {}) : vid.pause()), { threshold: .3 }).observe(vid);
 
-let heroGone = false, formOn = false;
+let resultGone = false, formOn = false;
 const dock = $('#dock');
-const syncDock = () => dock.classList.toggle('show', heroGone && !formOn);
-new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting && e.boundingClientRect.top < 0; syncDock(); }).observe($('.hero .btn'));
+const syncDock = () => dock.classList.toggle('show', resultGone && !formOn);
+new IntersectionObserver(([e]) => { resultGone = !e.isIntersecting && e.boundingClientRect.top < 0; syncDock(); }).observe($('#ctaQuote'));
 new IntersectionObserver(([e]) => { formOn = e.isIntersecting; syncDock(); }, { threshold: .15 }).observe($('#price'));
-const hdr = $('header');
-addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+// ---------- FAQ ----------
+function buildFaq() {
+  const open = [...document.querySelectorAll('.qi')].map(q => q.classList.contains('open'));
+  $('#faq').innerHTML = COPY[lang].faq.map(([q, a], i) =>
+    `<div class="qi${(open.length ? open[i] : i === 0) ? ' open' : ''}"><button type="button" aria-expanded="${(open.length ? open[i] : i === 0)}"><span>${q}</span><i class="pm"></i></button><div class="ans"><div><p>${a}</p></div></div></div>`).join('');
+}
+$('#faq').addEventListener('click', e => {
+  const b = e.target.closest('.qi > button'); if (!b) return;
+  const qi = b.parentElement, open = !qi.classList.contains('open');
+  qi.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+  if (open && window.gtag) gtag('event', 'faq_open', { question: [...qi.parentElement.children].indexOf(qi) + 1 });
+});
+
+// ---------- testimonials: published ones, read straight from Firestore's REST API ----------
+// Written in the admin app (Website → Testimonials); the rules let anyone read a
+// testimonial only while it is published. Shown in the words the customer used.
+const FS_REST = 'https://firestore.googleapis.com/v1/projects/attend-aarya/databases/(default)/documents:runQuery?key=AIzaSyDTU7zLm-1ss3j9sMyuWG7e4YWsQYmCXXg';
+let testimonials = [];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function fsVal(v) { if (!v) return undefined; if ('stringValue' in v) return v.stringValue; if ('integerValue' in v) return +v.integerValue; if ('doubleValue' in v) return v.doubleValue; if ('booleanValue' in v) return v.booleanValue; }
+async function loadTestimonials() {
+  if (new URLSearchParams(location.search).has('demo')) {
+    testimonials = [
+      { name: 'Ravi Kumar', place: 'Erode, Tamil Nadu', balesPerDay: 220, quote: 'Same 18 rounds as before and I get more bales out of every roll. The bales came through the season fine.', photo: 'assets/drop-poster.jpg' },
+      { name: 'Manjunath', place: 'Mandya, Karnataka', balesPerDay: 150, quote: 'I was worried thinner film would tear. After the first 100 bales I stopped worrying.', photo: 'assets/drop-wide-poster.jpg' },
+      { name: 'Suresh Patil', place: 'Belagavi, Karnataka', balesPerDay: 300, quote: 'We counted rolls at the end of the month. Fewer rolls for the same work.', photo: 'assets/drop-poster.jpg' },
+      { name: 'Anil', place: 'Palakkad, Kerala', quote: 'Fits our wrapper with no change. Good film.', photo: 'assets/drop-wide-poster.jpg' },
+    ];
+  } else {
+    try {
+      const res = await fetch(FS_REST, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ structuredQuery: {
+        from: [{ collectionId: 'testimonials' }], where: { fieldFilter: { field: { fieldPath: 'published' }, op: 'EQUAL', value: { booleanValue: true } } }, limit: 40 } }) });
+      const rows = await res.json();
+      testimonials = (Array.isArray(rows) ? rows : []).filter(r => r.document).map(r => {
+        const f = r.document.fields || {};
+        return { name: fsVal(f.name), place: fsVal(f.place), quote: fsVal(f.quote), photo: fsVal(f.photo), balesPerDay: fsVal(f.balesPerDay), order: fsVal(f.order) ?? 0 };
+      }).filter(t => t.name && t.quote).sort((a, b) => a.order - b.order);
+    } catch { testimonials = []; }
+  }
+  renderTestimonials();
+}
+function renderTestimonials() {
+  const sec = $('#tst');
+  if (!testimonials.length) { sec.hidden = true; return; }
+  const t = COPY[lang], wasHidden = sec.hidden;
+  sec.hidden = false;
+  $('#track').innerHTML = testimonials.map((x, i) => `<article class="tcard" data-reveal style="--rd:${Math.min(i, 4) * .07}s">
+      ${x.photo ? `<img src="${esc(x.photo)}" alt="" loading="lazy">` : ''}
+      <div class="tb"><q>${esc(x.quote)}</q><div class="who"><b>${esc(x.name)}</b><span>${esc(x.place)}${x.balesPerDay ? ` · <span class="num" style="display:inline;margin:0">${IN(x.balesPerDay)}</span> ${esc(t.tPerDay)}` : ''}</span></div></div>
+    </article>`).join('');
+  $('#track').querySelectorAll('[data-reveal]').forEach(e => wasHidden ? io.observe(e) : e.classList.add('in'));
+  if (wasHidden) sec.querySelectorAll('.head[data-reveal]').forEach(e => io.observe(e));
+  syncArrows();
+}
+const track = $('#track');
+const cardStep = () => (track.firstElementChild?.offsetWidth || 300) + 18;
+function syncArrows() {
+  $('#tPrev').disabled = track.scrollLeft < 4;
+  $('#tNext').disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+}
+$('#tPrev').addEventListener('click', () => { touched(); track.scrollBy({ left: -cardStep() }); });
+$('#tNext').addEventListener('click', () => { touched(); track.scrollBy({ left: cardStep() }); });
+track.addEventListener('scroll', syncArrows, { passive: true });
+// mouse drag to scroll (touch already swipes natively)
+let drag = null;
+track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, left: track.scrollLeft, moved: false }; track.setPointerCapture(e.pointerId); });
+track.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (Math.abs(dx) > 4) { drag.moved = true; track.classList.add('drag'); } track.scrollLeft = drag.left - dx; });
+const endDrag = () => { if (!drag) return; touched(); track.classList.remove('drag'); const step = cardStep(); track.scrollTo({ left: Math.round(track.scrollLeft / step) * step }); drag = null; };
+track.addEventListener('pointerup', endDrag); track.addEventListener('pointercancel', endDrag);
+// a slow drift to the next story every 6 s until the visitor takes over
+let lastTouch = 0;
+const touched = () => lastTouch = Date.now();
+track.addEventListener('touchstart', touched, { passive: true });
+track.addEventListener('mouseenter', touched);
+setInterval(() => {
+  if (reduce || $('#tst').hidden || Date.now() - lastTouch < 9000 || document.hidden) return;
+  const r = track.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+  const atEnd = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+  track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + cardStep() });
+}, 6000);
+// the strip itself is hidden until loaded, so watch the drop-test clip just above it
+new IntersectionObserver(([e], o) => { if (e.isIntersecting) { o.disconnect(); loadTestimonials(); } }, { rootMargin: '600px 0px' }).observe($('#media'));
 
 // ---------- form ----------
 // Leads go to the `leads` collection of the app's own Firebase project (attend-aarya);
@@ -874,8 +1182,20 @@ function leadsDb() {
   }).catch(e => { leadsConn = null; throw e; });
   return leadsConn;
 }
-// warm the connection as soon as someone starts filling the form
-$('#form').addEventListener('focusin', () => leadsDb().catch(() => {}), { once: true });
+// Every lead is also emailed to info@aaryaplastopet.com through the main site's
+// EmailJS account and contact-form template (same params as the home page form).
+let mailConn;
+function mailer() {
+  mailConn = mailConn || new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js';
+    s.onload = () => { emailjs.init('QhHVus0o94yoXiR6X'); res(emailjs); };
+    s.onerror = () => { mailConn = null; rej(new Error('emailjs failed to load')); };
+    document.head.appendChild(s);
+  });
+  return mailConn;
+}
+$('#form').addEventListener('focusin', () => { leadsDb().catch(() => {}); mailer().catch(() => {}); }, { once: true });
 
 const form = $('#form'), phone = $('#phone');
 phone.addEventListener('input', () => {
@@ -885,8 +1205,8 @@ phone.addEventListener('input', () => {
 });
 $('#name').addEventListener('input', () => { $('#nameCtl').classList.remove('bad'); $('#nameErr').classList.remove('show'); });
 $('#consent').addEventListener('change', () => $('#consentRow').classList.remove('bad'));
-
 function flag(ctl, err) { ctl.classList.remove('bad'); void ctl.offsetWidth; ctl.classList.add('bad'); err && err.classList.add('show'); }
+
 form.addEventListener('submit', async ev => {
   ev.preventDefault();
   if (form.company.value) return; // bots fill the hidden field
@@ -912,7 +1232,15 @@ form.addEventListener('submit', async ev => {
     $('#sendErr').classList.add('show');
     return;
   }
-  if (window.gtag) gtag('event', 'generate_lead', { source: '22mic-landing', bales_per_day: lead.balesPerDay });
+  // the lead is safe in the database; the email is a convenience, so never block on it
+  mailer().then(ej => ej.send('service_sg1gkj4', 'template_flyd6xd', {
+    company_name: `${lead.name} (22 µ page lead)`, email: lead.email || '—', phone: lead.phone,
+    quantity: `${lead.balesPerDay} bales/day · +${lead.extraBalesPerMonth} extra bales/month on 22 µ`,
+    location: lead.town || '—',
+    message: `New lead from the REINLAND 22 µ page. Language: ${COPY[lang].name} (${lang}). WhatsApp: https://wa.me/${lead.phone.replace('+', '')}`,
+    source_page: PAGE_URL,
+  })).catch(e => console.warn('lead email not sent', e));
+  if (window.gtag) gtag('event', 'generate_lead', { source: '22mic-landing', bales_per_day: lead.balesPerDay, language: lang });
 
   const t = COPY[lang], card = $('#formcard');
   card.style.height = card.offsetHeight + 'px';
@@ -920,15 +1248,17 @@ form.addEventListener('submit', async ev => {
   $('#wa').href = 'https://wa.me/917483643028?text=' + encodeURIComponent(t.waText(name, slider.value));
   form.classList.add('out');
   $('#done').classList.add('show');
-  requestAnimationFrame(() => card.style.height = Math.max($('#done').scrollHeight + 64, 340) + 'px');
 });
 
 // ---------- boot ----------
-applyCopy();
-render();
-movePill($('.lang')); movePill($('.seg'));
-document.fonts.ready.then(() => { drawIso(!reduce); isoBoot(); movePill($('.lang')); movePill($('.seg')); });
-addEventListener('resize', () => { movePill($('.lang')); movePill($('.seg')); });
+lang = pickStartLang();
+loadFont(lang).then(() => {
+  applyCopy();
+  // numbers count up from zero the first time
+  if (!reduce) { ['#headNum', '#perDay'].forEach(s => tweens.set($(s), { value: 0 })); document.querySelectorAll('.brow span').forEach(s => tweens.set(s, { value: 0 })); nextFrame(() => render(true)); }
+  geoLang();
+});
+document.fonts.ready.then(() => movePill());
 </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+# Aarya Plastopet — www.aaryaplastopet.com
+# Search engines and AI search / answer engines are welcome on the public pages.
+User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /INTERNAL%20LOGIN/
+Disallow: /silage-preview/
+
+Sitemap: https://www.aaryaplastopet.com/sitemap.xml
