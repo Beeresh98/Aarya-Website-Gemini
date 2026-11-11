@@ -531,42 +531,100 @@ section.block{padding-top:120px}
   [data-parallax]{transform:none!important}
 }
 
-/* ---------- where we supply: a truck and a ship draw their route as the section scrolls in ---------- */
-.lanes{margin-top:36px;display:grid;gap:44px}
-.lane{--p:1;--travel:0px}
-.lane-hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.reach-sec .reach-h{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+/* ---------- where we supply: India and world maps that light up as they scroll in ---------- */
+.mapgrid{display:grid;gap:22px}
+.mapcard{position:relative;display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--navy);border-radius:16px;overflow:hidden;min-width:0}
+.mc-hd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;border-bottom:1.5px solid var(--navy)}
+.reach-sec .reach-h{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
 .reach-sec .reach-h span{color:var(--grey);font-weight:700;margin-left:6px}
-.lane-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;padding:6px 0}
+.lane-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;padding:4px 0}
 .lane-more svg{width:16px;height:16px;transition:transform .3s var(--ease)}
 .lane-more:hover svg{transform:translateX(3px)}
-.lane-track{position:relative;height:66px;margin-top:10px;color:var(--navy);overflow:hidden}
-.lane-from{position:absolute;left:0;bottom:3px;width:72px;height:52px}
-.lane-line{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--ghost);overflow:hidden;border-radius:2px}
-.lane-line i{position:absolute;inset:0;background:var(--navy);transform:translateX(calc((var(--p) - 1) * 100%));will-change:transform}
-.lane-sea .lane-line{background:repeating-linear-gradient(90deg,var(--ghost) 0 10px,transparent 10px 18px)}
-.lane-sea .lane-line i{background:repeating-linear-gradient(90deg,var(--blue) 0 10px,transparent 10px 18px)}
-.lane-veh{position:absolute;left:84px;bottom:3px;width:88px;transform:translateX(calc(var(--p) * var(--travel)));will-change:transform}
-.lane-sea .lane-veh{width:112px;bottom:-4px}
-.lane-veh svg{width:100%;height:auto}
-.reach{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:18px}
-.reach li{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:700;font-size:14px;color:var(--navy);
-  transition:color .3s ease,border-color .3s ease,background-color .3s ease}
-/* until the vehicle reaches a stop it stays quiet (only once the script is running) */
-.lane.live .reach li:not(.on){color:var(--muted);background:transparent}
-.lane.live .reach li.on{border-color:var(--navy)}
+.mc-map{padding:10px 10px 4px}
+.map-ex .mc-map{padding:18px 12px 8px}
+.map{display:block;width:100%;height:auto;overflow:visible}
+.map text{font-family:Montserrat,system-ui,sans-serif}
+/* land and the states we supply: grey until the card scrolls in, then inked navy one after another */
+.map .land{fill:#E6E9EE}
+.map .st{fill:#C9CFD8;stroke:var(--card);stroke-width:1.6;stroke-linejoin:round;transition:fill .7s ease;transition-delay:calc(.15s + var(--i) * .11s)}
+.mapcard.in .st{fill:var(--navy)}
+.map .dots{fill:none;stroke:#D3D8DF;stroke-width:6.4;stroke-linecap:round}
+.map .dots.hi{transition:stroke .8s ease;transition-delay:calc(.3s + var(--i) * .16s)}
+.mapcard.in .dots.hi{stroke:var(--navy)}
+/* routes draw outwards from the factory */
+.map .rt{fill:none;stroke:var(--blue);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--ease);transition-delay:calc(.75s + var(--i) * .12s)}
+.map-in .rt{stroke:#9DABFF}
+.mapcard.in .rt{stroke-dashoffset:0}
+.map .mv{fill:#fff;stroke:var(--blue);stroke-width:2.6;opacity:0;transition:opacity .5s ease 2s}
+.mapcard.in .mv{opacity:1}
+.map .stop{opacity:0;transition:opacity .5s ease;transition-delay:calc(1.15s + var(--i) * .12s)}
+.mapcard.in .stop{opacity:1}
+.map .dot{fill:#fff;stroke:var(--blue);stroke-width:3}
+.map .lead{fill:none;stroke:var(--navy);stroke-width:1.5}
+.map .pl{transform-box:fill-box;transform-origin:center;transform:scale(1.3);transition:transform .3s var(--spring)}
+.map-ex .pl{transform:scale(2.1)}
+.map .plate{fill:#fff;stroke:var(--navy);stroke-width:1.5;transition:fill .25s ease}
+.map .code{font-size:14px;font-weight:800;letter-spacing:.04em;fill:var(--navy);transition:fill .25s ease}
+.map-ex .code{font-size:16px}
+.map .fac .pin{fill:var(--blue);stroke:#fff;stroke-width:3}
+.map .fac .pin-c{fill:#fff}
+.map .pulse{fill:none;stroke:var(--blue);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:mapPulse 2.6s ease-out infinite}
+.map .pulse.p2{animation-delay:1.3s}
+@keyframes mapPulse{from{transform:scale(1);opacity:.75}to{transform:scale(3.4);opacity:0}}
+.map .fac-l{transform-box:fill-box;transform-origin:right center;transform:scale(1.25)}
+.map-ex .fac-l{transform-origin:center bottom;transform:scale(2)}
+.map .fl1{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;fill:var(--navy)}
+.map .fl2{font-size:12px;font-weight:600;fill:var(--muted)}
+.map-ex .rt{stroke-width:4.6}
+.map-ex .mv{stroke-width:4}
+.map-ex .dot{stroke-width:4.5}
+.map-ex .lead{stroke-width:3}
+/* a plate and its state light each other up */
+.map .st.hot{fill:var(--blue);transition-delay:0s}
+.map .dots.hi.hot{stroke:var(--blue);transition-delay:0s}
+.map .stop.hot .plate{fill:var(--blue);stroke:var(--blue)}
+.map .stop.hot .code{fill:#fff}
+.map .stop.hot .pl{transform:scale(1.5)}
+.map-ex .stop.hot .pl{transform:scale(2.35)}
+/* number-plate legend */
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:10px 14px 16px}
+.plates li{display:flex;align-items:center;gap:10px;min-height:40px;border:1.5px solid var(--navy);border-radius:9px;overflow:hidden;background:#fff;
+  font-weight:700;font-size:13.5px;line-height:1.2;color:var(--navy);padding-right:10px;cursor:pointer;transition:background-color .25s ease,transform .25s var(--ease)}
+.plates b{align-self:stretch;display:grid;place-items:center;min-width:40px;padding:0 6px;background:var(--navy);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;transition:background-color .25s ease}
+.plates li.hot{background:var(--blue-soft)}
+.plates li.hot b{background:var(--blue)}
+.plates li:active{transform:scale(.97)}
+.mc-note{padding:0 16px 16px;font-size:14px;line-height:1.5;font-weight:500;color:var(--ink-2)}
+.mapcard .rev-stripe{margin-top:auto}
+.map-credit{margin-top:12px;font-size:11.5px;font-weight:500;color:var(--muted)}
+@media (min-width:600px){
+  .plates{display:flex;flex-wrap:wrap}
+  .plates li{padding-right:14px}
+  .map .pl{transform:scale(1.1)}
+  .map-ex .pl{transform:scale(1.45)}
+  .map-ex .stop.hot .pl{transform:scale(1.65)}
+  .map .stop.hot .pl{transform:scale(1.3)}
+  .map .fac-l{transform:scale(1.1)}
+  .map-ex .fac-l{transform:scale(1.4)}
+  .map-ex .rt{stroke-width:2.6}
+  .map-ex .mv{stroke-width:2.6}
+  .map-ex .dot{stroke-width:3}
+  .map-ex .lead{stroke-width:1.6}
+}
 @media (min-width:960px){
-  .lane-track{height:74px}
-  .reach{display:grid;gap:0;margin-top:0;padding-left:150px}
-  .lane-road .reach{grid-template-columns:repeat(7,1fr)}
-  .lane-sea .reach{grid-template-columns:repeat(2,1fr);padding-left:38%}
-  .reach li{position:relative;padding:20px 12px 0 0;border:0;border-radius:0;background:none;font-size:15px}
-  .reach li::before{content:"";position:absolute;left:0;top:-8px;width:13px;height:13px;border-radius:50%;background:var(--paper);
-    box-shadow:inset 0 0 0 3px var(--navy);transition:transform .35s var(--spring),box-shadow .3s ease,background-color .3s ease}
-  .lane-sea .reach li::before{box-shadow:inset 0 0 0 3px var(--blue)}
-  .lane.live .reach li:not(.on)::before{box-shadow:inset 0 0 0 3px var(--line)}
-  .lane.live .reach li.on::before{background:var(--blue);box-shadow:inset 0 0 0 3px var(--blue);transform:scale(1.25)}
-  .lane.live .reach li:not(.on),.lane.live .reach li.on{background:none}
+  .mapgrid{gap:28px 32px;align-items:start}
+  .mapgrid.both{grid-template-columns:5fr 7fr;grid-template-areas:"in head" "in ex";grid-template-rows:auto 1fr}
+  .mapgrid.both .head{grid-area:head;padding-top:8px}
+  .mapgrid.both .map-in{grid-area:in}
+  .mapgrid.both .map-ex{grid-area:ex;align-self:end}
+  .mapgrid.only-in{grid-template-columns:5fr 7fr;align-items:center}
+  .mapgrid.only-in .map-in{order:-1}
+  .mapgrid.only-ex .map-ex{max-width:900px}
+  .mc-hd{padding:14px 20px}
+  .plates{padding:12px 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .map .mv,.map .pulse{display:none}
 }
 
 /* ---------- Google reviews: cards cut like the label panel on our carton ---------- */
@@ -602,6 +660,3 @@ section.block{padding-top:120px}
 .copy .regs + .wrap{padding-top:10px}
 .ftr-links p{max-width:340px}
 
-@media (prefers-reduced-motion:reduce){
-  .lane{--p:1!important}
-}

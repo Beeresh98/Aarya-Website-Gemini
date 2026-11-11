@@ -60,38 +60,24 @@
     if (contact) new IntersectionObserver(([e]) => { atForm = e.isIntersecting; sync(); }, { threshold: .1 }).observe(contact);
   }
 
-  // ---------- where we supply: the truck / ship follows the scroll, stops switch on as it passes ----------
-  const lanes = $$('[data-lane]');
-  if (lanes.length && !reduce) {
-    const wide = matchMedia('(min-width:960px)');
-    const model = lanes.map((el, n) => ({ el, n, track: $('.lane-track', el), veh: $('.lane-veh', el), stops: $$('.reach li', el), at: [], p: -1 }));
-    const measure = () => model.forEach(m => {
-      const tw = m.track.offsetWidth, vw = m.veh.offsetWidth, x0 = m.veh.offsetLeft, travel = Math.max(0, tw - x0 - vw);
-      m.el.style.setProperty('--travel', travel + 'px');
-      const box = m.track.getBoundingClientRect();
-      m.at = m.stops.map((li, i) => wide.matches && travel
-        ? Math.min(.98, Math.max(.02, (li.getBoundingClientRect().left - box.left - x0 - vw * .6) / travel))   // when the cab reaches the dot
-        : (i + 1) / (m.stops.length + .4));
+  // ---------- where we supply: a number plate lights its state on the map, and the other way round ----------
+  const canHover = matchMedia('(hover:hover)').matches;
+  $$('.mapcard').forEach(card => {
+    const set = (code, on) => $$('[data-st="' + code + '"]', card).forEach(e => e.classList.toggle('hot', on));
+    $$('[data-st]', card).forEach(el => {
+      const code = el.dataset.st;
+      if (canHover) {
+        el.addEventListener('pointerenter', () => set(code, true));
+        el.addEventListener('pointerleave', () => set(code, false));
+      } else {
+        el.addEventListener('click', () => {
+          const on = !el.classList.contains('hot');
+          $$('.hot', card).forEach(e => e.classList.remove('hot'));
+          set(code, on);
+        });
+      }
     });
-    const paint = () => {
-      const vh = innerHeight;
-      model.forEach(m => {
-        const top = m.track.getBoundingClientRect().top;
-        // starts as the lane rises past 88% of the screen, complete by 38%
-        const p = Math.min(1, Math.max(0, (vh * .88 - top) / (vh * .5)));
-        if (Math.abs(p - m.p) < .002) return;
-        m.p = p; m.el.style.setProperty('--p', p.toFixed(4));
-        m.stops.forEach((li, i) => li.classList.toggle('on', p >= m.at[i]));
-      });
-    };
-    lanes.forEach(el => el.classList.add('live'));
-    let queued = false;
-    const tick = () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; paint(); }); } };
-    measure(); paint();
-    addEventListener('scroll', tick, { passive: true });
-    addEventListener('resize', () => { measure(); model.forEach(m => m.p = -1); paint(); });
-    addEventListener('load', () => { measure(); model.forEach(m => m.p = -1); paint(); });
-  }
+  });
 
   const yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
 
