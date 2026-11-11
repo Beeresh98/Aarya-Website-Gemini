@@ -531,8 +531,77 @@ section.block{padding-top:120px}
   [data-parallax]{transform:none!important}
 }
 
-/* where we supply: state / region chips */
-.reach-sec .reach-h{margin-top:28px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.reach{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:14px}
-.reach-sec .head + .reach{margin-top:28px}
-.reach li{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:700;font-size:14px;color:var(--navy)}
+/* ---------- where we supply: a truck and a ship draw their route as the section scrolls in ---------- */
+.lanes{margin-top:36px;display:grid;gap:44px}
+.lane{--p:1;--travel:0px}
+.lane-hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.reach-sec .reach-h{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.reach-sec .reach-h span{color:var(--grey);font-weight:700;margin-left:6px}
+.lane-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;padding:6px 0}
+.lane-more svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.lane-more:hover svg{transform:translateX(3px)}
+.lane-track{position:relative;height:66px;margin-top:10px;color:var(--navy);overflow:hidden}
+.lane-from{position:absolute;left:0;bottom:3px;width:72px;height:52px}
+.lane-line{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--ghost);overflow:hidden;border-radius:2px}
+.lane-line i{position:absolute;inset:0;background:var(--navy);transform:translateX(calc((var(--p) - 1) * 100%));will-change:transform}
+.lane-sea .lane-line{background:repeating-linear-gradient(90deg,var(--ghost) 0 10px,transparent 10px 18px)}
+.lane-sea .lane-line i{background:repeating-linear-gradient(90deg,var(--blue) 0 10px,transparent 10px 18px)}
+.lane-veh{position:absolute;left:84px;bottom:3px;width:88px;transform:translateX(calc(var(--p) * var(--travel)));will-change:transform}
+.lane-sea .lane-veh{width:112px;bottom:-4px}
+.lane-veh svg{width:100%;height:auto}
+.reach{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:18px}
+.reach li{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:700;font-size:14px;color:var(--navy);
+  transition:color .3s ease,border-color .3s ease,background-color .3s ease}
+/* until the vehicle reaches a stop it stays quiet (only once the script is running) */
+.lane.live .reach li:not(.on){color:var(--muted);background:transparent}
+.lane.live .reach li.on{border-color:var(--navy)}
+@media (min-width:960px){
+  .lane-track{height:74px}
+  .reach{display:grid;gap:0;margin-top:0;padding-left:150px}
+  .lane-road .reach{grid-template-columns:repeat(7,1fr)}
+  .lane-sea .reach{grid-template-columns:repeat(2,1fr);padding-left:38%}
+  .reach li{position:relative;padding:20px 12px 0 0;border:0;border-radius:0;background:none;font-size:15px}
+  .reach li::before{content:"";position:absolute;left:0;top:-8px;width:13px;height:13px;border-radius:50%;background:var(--paper);
+    box-shadow:inset 0 0 0 3px var(--navy);transition:transform .35s var(--spring),box-shadow .3s ease,background-color .3s ease}
+  .lane-sea .reach li::before{box-shadow:inset 0 0 0 3px var(--blue)}
+  .lane.live .reach li:not(.on)::before{box-shadow:inset 0 0 0 3px var(--line)}
+  .lane.live .reach li.on::before{background:var(--blue);box-shadow:inset 0 0 0 3px var(--blue);transform:scale(1.25)}
+  .lane.live .reach li:not(.on),.lane.live .reach li.on{background:none}
+}
+
+/* ---------- Google reviews: cards cut like the label panel on our carton ---------- */
+.revs{margin-top:36px;display:grid;gap:18px}
+.rev{position:relative;display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--navy);border-radius:14px;overflow:hidden}
+.rev-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1.5px solid var(--navy)}
+.rev-tag{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)}
+.rev-stars{display:flex;gap:2px;color:var(--blue)}
+.rev-stars svg{width:16px;height:16px}
+.rev blockquote{flex:1;padding:18px 18px 6px;font-size:16px;line-height:1.6;font-weight:500;color:var(--ink-2)}
+.rev blockquote p + p{margin-top:12px}
+.rev:not(.long) blockquote{font-size:clamp(19px,1.7vw,23px);line-height:1.35;font-weight:700;letter-spacing:-.01em;color:var(--navy)}
+.rev figcaption{padding:12px 18px 18px}
+.rev figcaption small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+.rev figcaption b{display:block;margin-top:2px;font-size:15px;font-weight:800;letter-spacing:-.01em}
+/* the carton's foot stripe: navy bar with the grey bar tucked above it */
+.rev-stripe{display:block;height:14px;background:linear-gradient(var(--grey) 0 5px,transparent 5px 8px,var(--navy) 8px)}
+.rev-all{margin-top:22px}
+.rev-all a{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);text-decoration:none;padding:8px 0}
+.rev-all a svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.rev-all a:hover svg{transform:translateX(3px)}
+@media (min-width:860px){
+  .revs{grid-template-columns:repeat(12,1fr);gap:20px}
+  .rev:nth-child(1){grid-column:span 7}
+  .rev:nth-child(2){grid-column:span 5}
+  .rev:nth-child(3){grid-column:span 5}
+  .rev:nth-child(4){grid-column:span 7}
+}
+
+/* ---------- footer: registration numbers in their own quiet row ---------- */
+.copy .regs{justify-content:flex-start;gap:6px 28px;padding-top:14px;padding-bottom:0;font-size:12px;color:#C4CCD8;font-weight:600;letter-spacing:.02em}
+.copy .regs small{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8E9AAB;margin-right:8px}
+.copy .regs + .wrap{padding-top:10px}
+.ftr-links p{max-width:340px}
+
+@media (prefers-reduced-motion:reduce){
+  .lane{--p:1!important}
+}

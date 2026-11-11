@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/assets/img/factory-floor.jpg">
-<link rel="stylesheet" href="/css/site.css?v=afa7da75">
+<link rel="stylesheet" href="/css/site.css?v=9906c5cb">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -198,7 +198,17 @@
         <h2>Where we deliver in India</h2>
         <p class="lede">Trucks leave the Machenahalli Production Unit for buyers in these states. Not on the list? Ask us, we are adding more.</p>
       </div>
-      <ul class="reach"><li>Karnataka</li><li>Maharashtra</li><li>Madhya Pradesh</li><li>Tamil Nadu</li><li>Kerala</li><li>Andhra Pradesh</li><li>Telangana</li></ul>
+      <div class="lanes">
+      <div class="lane lane-road" data-lane>
+        <div class="lane-hd"><h3 class="reach-h">In India <span>by road</span></h3></div>
+        <div class="lane-track" aria-hidden="true">
+          <svg class="lane-from" viewBox="0 0 72 52" aria-hidden="true"><path fill="currentColor" d="M2 52V26l14-9v9l14-9v9l14-9v35z"/><path fill="currentColor" d="M50 52V4h10v48z"/><path fill="#fff" d="M9 34h6v6H9zM23 34h6v6h-6zM37 34h6v6h-6zM20 44h10v8H20z"/></svg>
+          <span class="lane-line"><i></i></span>
+          <span class="lane-veh"><svg viewBox="0 0 104 52" aria-hidden="true"><path fill="currentColor" d="M2 6a2 2 0 0 1 2-2h58a2 2 0 0 1 2 2v30H2z"/><path fill="#fff" d="M10 10h2v20h-2zM20 10h2v20h-2zM30 10h2v20h-2zM40 10h2v20h-2zM50 10h2v20h-2z" opacity=".45"/><path fill="currentColor" d="M67 14h17l14 13v9H67z"/><path fill="#fff" d="M72 18h10l8 8H72z"/><path fill="currentColor" d="M2 36h98v5H2z"/><g fill="currentColor"><circle cx="17" cy="43" r="8"/><circle cx="36" cy="43" r="8"/><circle cx="84" cy="43" r="8"/></g><g fill="#fff"><circle cx="17" cy="43" r="3"/><circle cx="36" cy="43" r="3"/><circle cx="84" cy="43" r="3"/></g></svg></span>
+        </div>
+        <ul class="reach"><li>Karnataka</li><li>Maharashtra</li><li>Madhya Pradesh</li><li>Tamil Nadu</li><li>Kerala</li><li>Andhra Pradesh</li><li>Telangana</li></ul>
+      </div>
+      </div>
     </div>
   </section>
 
@@ -247,11 +257,11 @@
   <div class="wrap ftr-links">
     <div>
       <div class="endorse"><img src="/assets/img/aarya-logo.png" alt="" width="40" height="40"><b>Aarya Plastopet</b></div>
-      <p>Makers of stretch film and REINLAND silage wrap. Machenahalli Production Unit, Shimoga, Karnataka, India. GSTIN 29AGKPH0861N1ZY. IEC AGKPH0861N. Udyam UDYAM-KR-10-0000850.</p>
+      <p>Makers of stretch film and REINLAND silage wrap. Machenahalli Production Unit, Shimoga, Karnataka, India.</p>
     </div>
     <div><h4>Stretch film</h4><a href="/india/stretch-film.html">For India</a><a href="/export/stretch-film.html">For export</a></div>
     <div><h4>REINLAND silage wrap</h4><a href="/india/silage-film.html">For India</a><a href="/export/silage-film.html">For export</a><a href="/22-micron/">REINLAND 22 µ</a></div>
-    <div><h4>Company</h4><a href="/about.html">About us</a><a href="/#factory">Factory</a><a href="/#quality">Quality</a><a href="/#contact">Contact</a><a href="/privacy-policy.html">Privacy policy</a></div>
+    <div><h4>Company</h4><a href="/about.html">About us</a><a href="/india/">India overview</a><a href="/export/">Export overview</a><a href="/#factory">Factory</a><a href="/#quality">Quality</a><a href="/#contact">Contact</a><a href="/privacy-policy.html">Privacy policy</a></div>
   </div>
   <div class="stripe">
     <svg viewBox="0 0 870 150" preserveAspectRatio="none" style="width:28vw;min-width:120px" aria-hidden="true">
@@ -267,7 +277,7 @@
       <a class="ftr-call" href="tel:+917483643028"><small>Call / WhatsApp</small><b>+91 74836 43028</b></a>
     </div>
   </div>
-  <div class="copy"><div class="wrap"><span>&copy; <span id="year">2026</span> Aarya Plastopet. All rights reserved. <a href="/privacy-policy.html">Privacy</a></span><a class="tel" href="tel:+917483643028">+91 74836 43028</a><a href="mailto:info@aaryaplastopet.com">info@aaryaplastopet.com</a></div></div>
+  <div class="copy"><div class="wrap regs"><span><small>GSTIN</small>29AGKPH0861N1ZY</span><span><small>IEC</small>AGKPH0861N</span><span><small>Udyam</small>UDYAM-KR-10-0000850</span></div><div class="wrap"><span>&copy; <span id="year">2026</span> Aarya Plastopet. All rights reserved. <a href="/privacy-policy.html">Privacy</a></span><a class="tel" href="tel:+917483643028">+91 74836 43028</a><a href="mailto:info@aaryaplastopet.com">info@aaryaplastopet.com</a></div></div>
 </footer>
 
 <div class="dock">
@@ -276,7 +286,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js" integrity="sha384-2BNGrQ48jXhJZb0u9FfgOUGJQsbuoecOc1/bdu0oRviV7oc0g5gFTyYsSd7YICDP" crossorigin="anonymous"></script>
-<script src="/js/site.js?v=611da638"></script>
+<script src="/js/site.js?v=230d1a84"></script>
 <script src="/js/track.js?v=1355821f"></script>
 </body>
 </html>
