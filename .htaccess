@@ -17,6 +17,10 @@ RewriteRule ^silage-film\.html$ /india/silage-film.html [L,R=301]
 RewriteCond %{THE_REQUEST} ^.*/index\.html
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
+# 4b. The old staff app that sat inside the website is retired (live admin is on admin.aaryaplastopet.com).
+#     410 tells Google it is gone for good. Keep it out of robots.txt so Google can see the 410.
+RedirectMatch 410 ^/INTERNAL.LOGIN(/|$)
+
 # 5. Friendly "page not found" page
 ErrorDocument 404 /404.html
 

@@ -530,3 +530,9 @@ section.block{padding-top:120px}
   [data-reveal]{opacity:1!important;transform:none!important}
   [data-parallax]{transform:none!important}
 }
+
+/* where we supply: state / region chips */
+.reach-sec .reach-h{margin-top:28px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.reach{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:14px}
+.reach-sec .head + .reach{margin-top:28px}
+.reach li{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:700;font-size:14px;color:var(--navy)}

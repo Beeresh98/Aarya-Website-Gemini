@@ -162,6 +162,7 @@
         source_page: location.pathname + (document.referrer ? ' (from ' + document.referrer + ')' : ' (direct)')
       };
       emailjs.send('service_sg1gkj4', 'template_flyd6xd', params).then(() => {
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_location: location.pathname });
         status.textContent = 'Thank you, we’ll contact you soon.'; status.className = 'form-status ok';
         form.reset(); btn.disabled = false; btn.classList.remove('busy'); lbl.textContent = label;
       }, err => {

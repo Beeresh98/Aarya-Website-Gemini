@@ -15,7 +15,6 @@ User-agent: Google-Extended
 User-agent: Applebot
 User-agent: Applebot-Extended
 Allow: /
-Disallow: /INTERNAL%20LOGIN/
 Disallow: /silage-preview/
 
 Sitemap: https://www.aaryaplastopet.com/sitemap.xml
